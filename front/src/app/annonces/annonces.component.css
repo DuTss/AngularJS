@@ -1,0 +1,114 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.header {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.annonces {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+}
+
+.annonces h2 {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.annonces ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.annonces li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.annonces li:last-child {
+  border-bottom: none;
+}
+
+.annonces li h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+.annonces li p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.annonces li p:last-child {
+  margin-bottom: 0;
+}
+
+.annonces li p.verified {
+  color: green;
+}
+
+.annonces li p.not-verified {
+  color: red;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.form button {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #e55d5d;
+}

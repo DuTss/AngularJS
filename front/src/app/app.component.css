@@ -1,0 +1,82 @@
+/* Couleurs de base */
+:root {
+  --color-primary: #ff6600;
+  --color-secondary: #ffd633;
+  --color-tertiary: #ffc107;
+  --color-text: #333;
+}
+.navbar {
+  background-color: #ff8c00; /* orange */
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 60px;
+}
+
+.navbar-link a:hover {
+  color: var(--color-secondary);
+}
+
+/* Boutons de la barre de navigation */
+.navbar-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 10px;
+  color: white;
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-tertiary);
+}
+
+.btn-secondary {
+  background-color: var(--color-text);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: white;
+}

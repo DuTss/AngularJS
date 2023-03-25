@@ -1,0 +1,13 @@
+<div class="annonces">
+    <h2>Liste des annonces</h2>
+    <ul>
+      <li *ngFor="let annonce of annonces">
+        <h3>{{ annonce.titre }}</h3>
+        <p>{{ annonce.description }}</p>
+        <p>{{ annonce.lieu }}</p>
+        <p>{{ annonce.prix }}</p>
+        <p *ngIf="annonce.flag">Annonce vérifiée</p>
+        <p *ngIf="!annonce.flag">Annonce non vérifiée</p>
+      </li>
+    </ul>
+</div>
