@@ -25,7 +25,7 @@ body {
   overflow: hidden;
 }
 
-.annonces h2 {
+h2 {
   background-color: #ff6b6b;
   color: #fff;
   padding: 10px;
@@ -38,11 +38,15 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .annonces li {
-  border-bottom: 1px solid #ddd;
+  border: 2px solid #ddd;
   padding: 10px;
+  border-radius: 15px;
 }
 
 .annonces li:last-child {
@@ -60,6 +64,11 @@ body {
   margin: 5px 0;
   font-size: 14px;
   color: #666;
+}
+
+.annonces li a {
+  text-decoration: none;
+  font: normal Roboto, sans-serif;
 }
 
 .annonces li p:last-child {
@@ -111,4 +120,52 @@ body {
 
 .form button:hover {
   background-color: #e55d5d;
+}
+
+.supprimer {
+  background-color: #b50405; /* Couleur rouge */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 25px; /* Bords arrondis */
+  box-shadow: 0 5px #df0101; /* Relief */
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+}
+
+.modifier {
+  background-color: #4caf50; /* Couleur verte */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 25px; /* Bords arrondis */
+  box-shadow: 0 5px #2e8b57; /* Relief */
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Animation de transition */
+  margin: 5px;
+}
+
+.modifier:hover {
+  background-color: #3e8e41; /* Couleur verte foncée au survol */
+  box-shadow: 0 5px #2e8b57;
+}
+
+.supprimer:hover {
+  background-color: #b50405; /* Couleur rouge foncée au survol */
+  box-shadow: 0 5px #df0101;
+}
+
+.modifier:active {
+  background-color: #2e6f34; /* Couleur verte foncée au clic */
+  box-shadow: 0 2px #2e8b57;
+  transform: translateY(3px); /* Effet de pression */
+}
+
+.supprimer:active {
+  background-color: #df0101; /* Couleur rouge foncée au clic */
+  box-shadow: 0 2px #df0101;
+  transform: translateY(3px); /* Effet de pression */
 }

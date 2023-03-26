@@ -1,5 +1,6 @@
+<h2>Liste des annonces</h2>
+
 <div class="annonces">
-    <h2>Liste des annonces</h2>
     <ul>
       <li *ngFor="let annonce of annonces">
         <h3>{{ annonce.titre }}</h3>
@@ -8,6 +9,8 @@
         <p>{{ annonce.prix }}</p>
         <p *ngIf="annonce.flag">Annonce vérifiée</p>
         <p *ngIf="!annonce.flag">Annonce non vérifiée</p>
+        <a [routerLink]="['/modifier_annonce', annonce._id]" class="modifier">Modifier</a>
+        <a href="/supprimer_annonce/id" class="supprimer">Supprimer</a>
       </li>
     </ul>
 </div>
