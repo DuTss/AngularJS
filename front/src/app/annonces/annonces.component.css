@@ -1,21 +1,35 @@
+/* Couleurs de base */
+:root {
+  --color-primary: #abc270;
+  --color-secondary: #fec868;
+  --color-tertiary: #fda769;
+  --color-text: #473c33;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: #f1f1f1;
-  color: #333;
+  color: #473c33;
 }
 
-.header {
-  background-color: #ff6b6b;
-  color: #fff;
-  padding: 20px;
-}
-
-.header h1 {
+/* ============== TITRES ============== */
+h1 {
   margin: 0;
   font-size: 36px;
   font-weight: bold;
-  text-transform: uppercase;
 }
+
+h2 {
+  background-color: #fec868;
+  color: #473c33;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ============== ANNONCES ============== */
 
 .annonces {
   background-color: #fff;
@@ -23,15 +37,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 20px;
   overflow: hidden;
-}
-
-h2 {
-  background-color: #ff6b6b;
-  color: #fff;
-  padding: 10px;
-  margin: 0;
-  font-size: 24px;
-  font-weight: bold;
 }
 
 .annonces ul {
@@ -45,25 +50,13 @@ h2 {
 
 .annonces li {
   border: 2px solid #ddd;
-  padding: 10px;
+  background-color: #fda769;
+  padding: 25px;
   border-radius: 15px;
 }
 
 .annonces li:last-child {
   border-bottom: none;
-}
-
-.annonces li h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff6b6b;
-}
-
-.annonces li p {
-  margin: 5px 0;
-  font-size: 14px;
-  color: #666;
 }
 
 .annonces li a {
@@ -75,12 +68,45 @@ h2 {
   margin-bottom: 0;
 }
 
-.annonces li p.verified {
+.annonce_flag_verif {
   color: green;
 }
 
-.annonces li p.not-verified {
+.annonce_flag_no_verif {
   color: red;
+}
+
+.annonce_titre {
+  color: #473c33;
+  margin: 0;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.annonce_titre:hover {
+  color: #fec868;
+  text-decoration: underline;
+}
+
+.annonce_description,
+.annonce_lieu {
+  font: Helvetica, arial;
+  font-size: 16px;
+  font-weight: lighter;
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.annonce_prix {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 5px 0;
+  margin-right: 10px;
+}
+
+.annonce_prix_satoshi {
+  display: flex;
+  align-items: center;
 }
 
 .form {
@@ -91,45 +117,14 @@ h2 {
   padding: 20px;
 }
 
-.form label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.form input[type="text"],
-.form input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.form button {
-  background-color: #ff6b6b;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.form button:hover {
-  background-color: #e55d5d;
-}
-
 .supprimer {
   background-color: #b50405; /* Couleur rouge */
   color: white;
-  padding: 5px 10px;
+  padding: 8px 15px;
   border: none;
   border-radius: 25px; /* Bords arrondis */
   box-shadow: 0 5px #df0101; /* Relief */
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   margin: 5px;
@@ -138,11 +133,11 @@ h2 {
 .modifier {
   background-color: #4caf50; /* Couleur verte */
   color: white;
-  padding: 5px 10px;
+  padding: 8px 15px;
   border: none;
   border-radius: 25px; /* Bords arrondis */
   box-shadow: 0 5px #2e8b57; /* Relief */
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease-in-out; /* Animation de transition */
   margin: 5px;

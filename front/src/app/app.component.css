@@ -1,12 +1,12 @@
 /* Couleurs de base */
 :root {
-  --color-primary: #ff6600;
-  --color-secondary: #ffd633;
-  --color-tertiary: #ffc107;
-  --color-text: #333;
+  --color-primary: #abc270;
+  --color-secondary: #fec868;
+  --color-tertiary: #fda769;
+  --color-text: #473c33;
 }
 .navbar {
-  background-color: #ff8c00; /* orange */
+  background-color: #abc270; /* orange */
   color: white;
   height: 60px;
   display: flex;

@@ -1,22 +1,22 @@
-<form (ngSubmit)="onSubmit()">
+<form class="formulaire" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="titre">Titre</label>
+      <label class="lab_titre" for="titre">Titre</label>
       <input type="text" class="form-control" id="titre" [(ngModel)]="annonce.titre" name="titre" required>
     </div>
     <div class="form-group">
-      <label for="description">Description</label>
+      <label class="lab_description" for="description">Description</label>
       <textarea class="form-control" id="description" [(ngModel)]="annonce.description" name="description" required></textarea>
     </div>
     <div class="form-group">
-      <label for="lieu">Lieu</label>
+      <label class="lab_lieu" for="lieu">Lieu</label>
       <input type="text" class="form-control" id="lieu" [(ngModel)]="annonce.lieu" name="lieu" required>
     </div>
     <div class="form-group">
-      <label for="prix">Prix</label>
+      <label class="lab_prix" for="prix">Prix</label>
       <input type="number" class="form-control" id="prix" [(ngModel)]="annonce.prix" name="prix" required>
     </div>
     <div class="form-group">
-      <label for="flag">Flag</label>
+      <label class="lab_flag" for="flag">Flag</label>
       <input type="checkbox" class="form-control" id="flag" [(ngModel)]="annonce.flag" name="flag" required>
     </div>
     <button type="submit" class="btn btn-primary">Ajouter</button>
