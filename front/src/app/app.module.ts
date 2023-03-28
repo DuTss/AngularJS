@@ -10,6 +10,7 @@ import { UpdateAnnonceComponent } from './update-annonce/update-annonce.componen
 import { SingleAnnonceComponent } from './single-annonce/single-annonce.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SignupComponent } from './signup/signup.component';
     UpdateAnnonceComponent,
     SingleAnnonceComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AboutComponent
   ],
   imports: [
     HttpClientModule,
