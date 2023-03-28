@@ -1,0 +1,17 @@
+<div class="annonces">
+    <ul class="liste_annonce">
+      <li *ngIf="annonces">
+        <h3 class="annonce_titre"><a>{{ annonces.titre }}</a></h3>
+        <p  class="annonce_description">{{ annonces.description }}</p>
+        <div class="annonce_prix_satoshi">
+          <p  class="annonce_prix">     {{ annonces.prix }}</p>
+          <img src="../../assets/icons/Satoshi-symbol.png">
+        </div>
+        <p  class="annonce_lieu">       {{ annonces.lieu }}</p>
+        <p  class="annonce_flag_verif"    *ngIf="annonces.flag">Annonce vérifiée</p>
+        <p  class="annonce_flag_no_verif" *ngIf="!annonces.flag">Annonce non vérifiée</p>
+        <a  class="modifier"  [routerLink]="['/modifier_annonce', annonces._id]" >Modifier</a>
+        <a  class="supprimer"  (click)="deleteAnnonce(annonces._id)">Supprimer</a>
+      </li>
+    </ul>
+</div>

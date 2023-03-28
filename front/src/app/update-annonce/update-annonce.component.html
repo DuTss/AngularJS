@@ -1,6 +1,6 @@
 <div *ngIf="annonce">
-  <h2>Détails de l'annonce {{ annonce._id }}</h2>
-  <form>
+  <h2>Détails de l'annonce : {{ annonce.titre }}</h2>
+  <form class="formulaire">
     <div class="form-group">
       <label for="titre">Titre</label>
       <input type="text" class="form-control" id="titre" [(ngModel)]="annonce.titre" value="annonce.titre"name="titre" required>

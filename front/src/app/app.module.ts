@@ -7,6 +7,9 @@ import { AnnoncesComponent } from './annonces/annonces.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddAnnonceComponent } from './add-annonce/add-annonce.component';
 import { UpdateAnnonceComponent } from './update-annonce/update-annonce.component';
+import { SingleAnnonceComponent } from './single-annonce/single-annonce.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -14,7 +17,10 @@ import { UpdateAnnonceComponent } from './update-annonce/update-annonce.componen
     AppComponent,
     AnnoncesComponent,
     AddAnnonceComponent,
-    UpdateAnnonceComponent
+    UpdateAnnonceComponent,
+    SingleAnnonceComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     HttpClientModule,

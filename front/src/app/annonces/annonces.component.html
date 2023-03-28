@@ -1,8 +1,8 @@
 <h2>Liste des annonces</h2>
 <div class="annonces">
-    <ul>
+    <ul class="liste_annonce">
       <li *ngFor="let annonce of annonces">
-        <h3 class="annonce_titre">      {{ annonce.titre }}</h3>
+        <a [routerLink]="['/une_annonce', annonce._id]"><h3 class="annonce_titre">{{ annonce.titre }}</h3></a>
         <p  class="annonce_description">{{ annonce.description }}</p>
         <div class="annonce_prix_satoshi">
           <p  class="annonce_prix">     {{ annonce.prix }}</p>
@@ -12,7 +12,7 @@
         <p  class="annonce_flag_verif"    *ngIf="annonce.flag">Annonce vérifiée</p>
         <p  class="annonce_flag_no_verif" *ngIf="!annonce.flag">Annonce non vérifiée</p>
         <a  class="modifier"  [routerLink]="['/modifier_annonce', annonce._id]" >Modifier</a>
-        <a  class="supprimer" href="/supprimer_annonce/id" >Supprimer</a>
+        <a  class="supprimer"  (click)="deleteAnnonce(annonce._id)">Supprimer</a>
       </li>
     </ul>
 </div>

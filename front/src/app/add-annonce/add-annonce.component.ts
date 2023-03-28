@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Annonce } from '../models/annonce';
 import { AnnonceService } from '../services/annonce.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-annonce',
@@ -17,19 +18,15 @@ export class AddAnnonceComponent {
     flag: false
   };
 
-  constructor(private annonceService: AnnonceService) {}
+  constructor(
+    private annonceService: AnnonceService,
+    private router: Router
+  ) {}
 
   onSubmit() {
     this.annonceService.addAnnonce(this.annonce).subscribe(() => {
-      // Reset the form
-      this.annonce = {
-        _id: '',
-        titre: '',
-        description: '',
-        lieu: '',
-        prix: 0,
-        flag: false
-      };
+      // Rediriger vers la page /annonces
+      this.router.navigateByUrl('/annonces');
     });
   }
 }
