@@ -1,14 +1,18 @@
+<!-- création de compte -->
 <div class="container">
-    <h1>Signup</h1>
-    <form action="#" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      <label for="confirm-password">Confirm Password:</label>
-      <input type="password" id="confirm-password" name="confirm-password" required>
-      <button type="submit">Signup</button>
-    </form>
-  </div>
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="username">Pseudo</label>
+      <input type="text" class="form-control" id="pseudo" [(ngModel)]="user.pseudo" name="pseudo" required>
+    </div>
+    <div class="form-group">
+      <label for="lieu">Lieu</label>
+      <input class="form-control" id="lieu" [(ngModel)]="user.lieu" name="lieu" required>
+    </div>
+    <div class="form-group">
+      <label for="mdp">Mot de passe</label>
+      <input type="password" class="form-control" id="mdp" [(ngModel)]="user.mdp" name="mdp" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.form.valid">Créer un compte</button>
+  </form>
+</div>

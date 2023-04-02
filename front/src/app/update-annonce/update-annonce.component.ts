@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Annonce } from '../models/annonce';
 import { HttpClient } from '@angular/common/http';
 import { AnnonceService } from '../services/annonce.service';
-import { ActivatedRoute, Routes } from '@angular/router';
+import { ActivatedRoute, Router, RouterEvent, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-update-annonce',
@@ -15,7 +15,7 @@ export class UpdateAnnonceComponent {
     constructor(
       private annonceService: AnnonceService,
       private route: ActivatedRoute,
-      private http: HttpClient
+      private http: HttpClient,
     ) {}
 
     ngOnInit() {
@@ -35,7 +35,7 @@ export class UpdateAnnonceComponent {
           .subscribe(
             res => {
               console.log(res);
-              alert('L\'annonce a été modifiée avec succès !');
+              window.location.href = 'http://localhost:4201/annonces';
             },
             err => console.log(err)
           );

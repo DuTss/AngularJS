@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Annonce } from '../models/annonce';
+import { User } from '../models/user';
 import { AnnonceService } from '../services/annonce.service';
+import { AuthService } from '../services/auth.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-annonces',
@@ -10,10 +13,13 @@ import { AnnonceService } from '../services/annonce.service';
 })
 export class AnnoncesComponent implements OnInit {
   annonces: Annonce[] = [];
+  user: User[]= [];
 
   constructor(
     private annonceService: AnnonceService,
-    private http: HttpClient
+    private AuthService: AuthService,
+    private http: HttpClient,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -23,7 +29,6 @@ export class AnnoncesComponent implements OnInit {
 
   uneAnnonce(id: string) {
     this.annonceService.getAnnonce(id).subscribe(
-      
     );
 
   }
