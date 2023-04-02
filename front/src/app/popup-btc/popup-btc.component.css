@@ -1,0 +1,24 @@
+.my-custom-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.my-custom-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.my-custom-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.my-custom-button {
+  margin-left: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+}

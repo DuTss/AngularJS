@@ -15,6 +15,7 @@ export class SignupComponent {
     lieu: '',
     mdp: ''
   };
+  errorMsg = '';
 
   constructor(
     private AuthService: AuthService,
@@ -22,12 +23,15 @@ export class SignupComponent {
   ) {}
 
   onSubmit() {
-    this.AuthService.register(this.user).subscribe(() => {
-      // Rediriger vers la page /annonces
-      console.log(this.user);
-      this.router.navigateByUrl('/annonces');
-      const token = localStorage.getItem('token');
-      console.log(token);
-    });
+    if (!this.user.pseudo || !this.user.lieu || !this.user.mdp) {
+      this.errorMsg = 'Veuillez remplir tous les champs obligatoires.';
+      return;
+    } else {
+      this.AuthService.register(this.user).subscribe(() => {
+        // Rediriger vers la page /annonces
+        this.router.navigateByUrl('/annonces');
+      });
+    }
+
   }
 }

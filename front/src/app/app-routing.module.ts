@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
   { path: 'annonces', component: AnnoncesComponent,canActivate: [AuthGuard] },
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),ModalModule.forRoot()],
   exports: [RouterModule,FormsModule,ReactiveFormsModule ],
   providers: [AuthService,AuthGuard]
 })

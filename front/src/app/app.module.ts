@@ -11,6 +11,9 @@ import { SingleAnnonceComponent } from './single-annonce/single-annonce.componen
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
+import { PopupBtcComponent } from './popup-btc/popup-btc.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -22,12 +25,14 @@ import { AboutComponent } from './about/about.component';
     SingleAnnonceComponent,
     LoginComponent,
     SignupComponent,
-    AboutComponent
+    AboutComponent,
+    PopupBtcComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
