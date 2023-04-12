@@ -8,6 +8,7 @@ import { SingleAnnonceComponent } from './single-annonce/single-annonce.componen
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
+import { ChatComponent } from './chat/chat.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
 
   { path: 'about', component: AboutComponent },
+  { path: 'chat', component: ChatComponent },
 ];
 
 @NgModule({

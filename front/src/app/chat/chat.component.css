@@ -1,0 +1,47 @@
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  overflow-y: auto;
+  border: 1px solid gray;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+li:last-child {
+  border-bottom: none;
+}

@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { PopupBtcComponent } from './popup-btc/popup-btc.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -27,6 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     SignupComponent,
     AboutComponent,
     PopupBtcComponent,
+    ChatComponent,
   ],
   imports: [
     HttpClientModule,

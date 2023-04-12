@@ -3,9 +3,10 @@
     <a href="/">Logo</a>
   </div>
   <ul class="navbar-links">
-    <li class="navbar-link"><a routerLink="/ajouter_annonce">Ajouter une annonce</a></li>
+    <li *ngIf="isAuthenticated()" class="navbar-link"><a routerLink="/ajouter_annonce">Ajouter une annonce</a></li>
     <li class="navbar-link"><a routerLink="/annonces">Annonces</a></li>
     <li class="navbar-link"><a routerLink="/about">A propos</a></li>
+    <li *ngIf="isAuthenticated()" class="navbar-link"><a routerLink="/chat">Messages</a></li>
   </ul>
   <div class="navbar-buttons">
     <a *ngIf="!isAuthenticated()" routerLink="/login" class="btn btn-primary">Connexion</a>

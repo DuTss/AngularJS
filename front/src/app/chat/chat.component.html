@@ -1,0 +1,16 @@
+
+<div>
+
+  <h2>Mes messages</h2>
+    <label for="roomId">Room ID:</label>
+        <input type="text" [(ngModel)]="roomId">
+    <label for="message">Message:</label>
+        <input type="text" [(ngModel)]="message">
+    <button (click)="sendMessage()">Send</button>
+   <div>
+
+     <ul>
+       <li *ngFor="let msg of message">{{ msg }}</li>
+     </ul>
+   </div>
+</div>
