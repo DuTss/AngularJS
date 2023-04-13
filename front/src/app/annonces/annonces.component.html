@@ -11,8 +11,9 @@
         <p  class="annonce_lieu">       {{ annonce.lieu }}</p>
         <p  class="annonce_flag_verif"    *ngIf="annonce.flag">Annonce vérifiée</p>
         <p  class="annonce_flag_no_verif" *ngIf="!annonce.flag">Annonce non vérifiée</p>
+        <p  class="ajouter_par"><i>Ajoutée par : </i><b>{{ annonce.ajouter_par }}</b></p>
         <a  class="modifier"  [routerLink]="['/modifier_annonce', annonce._id]" >Modifier</a>
-        <a  class="supprimer"  (click)="deleteAnnonce(annonce._id)">Supprimer</a>
+        <a  class="supprimer"  (click)="deleteAnnonce(annonce._id)">Clotûré l'annonce</a>
       </li>
     </ul>
 </div>

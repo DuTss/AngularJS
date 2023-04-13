@@ -5,6 +5,7 @@ export interface Annonce {
     lieu: string;
     prix: number;
     flag: boolean;
+    ajouter_par: string
   }
 
 

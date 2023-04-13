@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Annonce } from '../models/annonce';
 import { AnnonceService } from '../services/annonce.service';
 import { Router } from '@angular/router';
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: 'app-add-annonce',
@@ -15,13 +16,24 @@ export class AddAnnonceComponent {
     description: '',
     lieu: '',
     prix: 0,
-    flag: false
+    flag: false,
+    ajouter_par: '',
   };
+  currentUser: any;
 
   constructor(
     private annonceService: AnnonceService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
+
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    console.log(this.currentUser);
+    console.log(this.currentUser.user.pseudo);
+    this.annonce.ajouter_par = this.currentUser.user.pseudo;
+    return this.currentUser.user.pseudo
+  }
 
   onSubmit() {
     this.annonceService.addAnnonce(this.annonce).subscribe(() => {

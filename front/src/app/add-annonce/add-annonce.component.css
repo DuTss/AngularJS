@@ -92,3 +92,7 @@
 .btn-primary:hover {
   background-color: #fda769;
 }
+
+.by_user {
+  display: none;
+}

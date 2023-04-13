@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { io } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
+import { ChatService } from '../services/chat.service';
+
+interface Message {
+  text: string;
+  roomId: string;
+}
 
 @Component({
   selector: 'app-chat',
@@ -7,27 +13,35 @@ import { io } from 'socket.io-client';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  private socket: any;
-  message: string ='';
-  roomId: string ='';
+  private socket: Socket;
+  message: string = '';
+  roomId: string = '';
+  messages: Message[] = [];
+  lastMessageSent: string = '';
+  currentUser: any;
 
-  constructor() {
+
+  constructor(private ChatService: ChatService) {
     // Initialisation de la connexion socket avec le serveur Express
     this.socket = io('http://localhost:3001');
   }
 
   ngOnInit(): void {
-    // Ecoute de l'événement 'message' émis par le serveur
-    this.socket.on('message', (data: any) => {
-      console.log(`Message reçu dans la salle ${data.roomId} : ${data.text}`);
+    this.ChatService.receiveMessages(this.roomId).subscribe((messages: Message[]) => {
+      this.messages = messages;
+      console.log(this.messages);
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      console.log(this.currentUser);
     });
   }
 
-  sendMessage() {
-    // Emission de l'événement 'message' vers le serveur
-    this.socket.emit('message', {
-      roomId: this.roomId,
-      text: this.message
-    });
+  sendMessage(): void {
+    console.log(this.message);
+    this.ChatService.sendMessage(this.message, this.roomId);
+    this.lastMessageSent = this.message;
+
+  // Inverser l'ordre des éléments de la liste des messages
+  this.messages.reverse();
+    this.message = '';
   }
 }

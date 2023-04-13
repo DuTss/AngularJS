@@ -150,7 +150,7 @@ h2 {
 }
 
 .supprimer:hover {
-  background-color: #b50405; /* Couleur rouge foncée au survol */
+  background-color: #d62d20; /* Couleur rouge foncée au survol */
   box-shadow: 0 5px #df0101;
 }
 
@@ -164,4 +164,7 @@ h2 {
   background-color: #df0101; /* Couleur rouge foncée au clic */
   box-shadow: 0 2px #df0101;
   transform: translateY(3px); /* Effet de pression */
+}
+
+.ajouter_par {
 }
