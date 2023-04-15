@@ -1,24 +1,44 @@
 <nav class="navbar">
   <div class="navbar-logo">
-    <a href="/">Logo</a>
+    <a href="/">
+      <img src="logo.png" alt="Logo">
+    </a>
   </div>
   <ul class="navbar-links">
-    <li *ngIf="isAuthenticated()" class="navbar-link"><a routerLink="/ajouter_annonce">Ajouter une annonce</a></li>
-    <li class="navbar-link"><a routerLink="/annonces">Annonces</a></li>
-    <li class="navbar-link"><a routerLink="/about">A propos</a></li>
-    <li *ngIf="isAuthenticated()" class="navbar-link"><a routerLink="/chat">Messages</a></li>
+    <li *ngIf="isAuthenticated()" class="navbar-link">
+      <a routerLink="/ajouter_annonce">Ajouter une annonce</a>
+    </li>
+    <li class="navbar-link">
+      <a routerLink="/annonces">Annonces</a>
+    </li>
+    <li class="navbar-link">
+      <a routerLink="/about">A propos</a>
+    </li>
+    <li *ngIf="isAuthenticated()" class="navbar-link">
+      <a routerLink="/chat">Messages</a>
+    </li>
   </ul>
   <div class="navbar-buttons">
     <a *ngIf="!isAuthenticated()" routerLink="/login" class="btn btn-primary">Connexion</a>
+    <a *ngIf="isAuthenticated()" class="btn btn-primary" routerLink="/profil">Mon profil</a>
     <a *ngIf="isAuthenticated()" class="btn btn-primary" (click)="onSubmit()">Se déconnecter</a>
     <a *ngIf="!isAuthenticated()" routerLink="/signup" class="btn btn-secondary">Inscription</a>
+    <div class="mode-switch">
+      <input type="checkbox" id="mode-switch" class="mode-switch-checkbox" />
+      <label for="mode-switch" class="mode-switch-label">
+        <span class="mode-switch-icon sun"></span>
+        <span class="mode-switch-icon moon"></span>
+      </label>
+      <div class="mode-switch-bg"></div>
+    </div>
   </div>
 </nav>
 
 <router-outlet></router-outlet>
 
 <footer>
-  <button mat-raised-button (click)="openPopup()">Donate
-    <img src="../../assets/icons/Bitcoin.svg" colors="orange" width="16" height="16">
-  </button>
+  <button mat-raised-button class="donate-btn" (click)="openPopup()">
+    <span class="donate-text">Donate</span>
+    <img src="../../assets/icons/Bitcoin.svg" class="donate-icon" alt="Bitcoin Icon">
+    </button>
 </footer>

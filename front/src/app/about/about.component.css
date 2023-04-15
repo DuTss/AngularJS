@@ -1,0 +1,56 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.about-section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-section-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.about-values-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-values-list li {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.about-values-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffa500;
+}

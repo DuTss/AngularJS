@@ -28,20 +28,21 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.ChatService.receiveMessages(this.roomId).subscribe((messages: Message[]) => {
+      console.log(messages);
       this.messages = messages;
-      console.log(this.messages);
+      console.log(this);
       this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
       console.log(this.currentUser);
+      return messages
     });
   }
 
   sendMessage(): void {
-    console.log(this.message);
     this.ChatService.sendMessage(this.message, this.roomId);
     this.lastMessageSent = this.message;
 
   // Inverser l'ordre des éléments de la liste des messages
-  this.messages.reverse();
+  //this.messages.reverse();
     this.message = '';
   }
 }

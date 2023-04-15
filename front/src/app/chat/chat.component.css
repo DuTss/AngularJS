@@ -26,11 +26,9 @@
 }
 
 .chat-messages {
-  flex: 1;
+  height: 300px; /* ou une autre hauteur fixe */
+  overflow: scroll;
   padding: 10px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
 }
 
 .chat-messages ul {

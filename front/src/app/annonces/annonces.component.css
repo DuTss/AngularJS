@@ -168,3 +168,21 @@ h2 {
 
 .ajouter_par {
 }
+
+@media screen and (max-width: 1024px) {
+  .annonce {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .annonce {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .annonce {
+    width: 100%;
+  }
+}

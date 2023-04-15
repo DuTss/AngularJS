@@ -13,6 +13,25 @@
         <p  class="ajouter_par"><i>Ajouté par : </i><b>{{ annonces.ajouter_par }}</b></p>
         <a  class="modifier"  [routerLink]="['/modifier_annonce', annonces._id]" >Modifier</a>
         <a  class="supprimer"  (click)="deleteAnnonce(annonces._id)">Clotûré l'annonce</a>
+        <button class="btn-comment" (click)="toggleCommentInput()">Commenter</button>
+        <div class="comment-form" *ngIf="showCommentInput">
+          <input type="text" class="comment-input" [(ngModel)]="commentaire.texte" placeholder="Votre commentaire">
+          <button class="comment-submit" (click)="onSubmit()">Envoyer</button>
+        </div>
+        <div class="commentaires">
+          <h4>Commentaires</h4>
+          <ul>
+            <li *ngFor="let commentaire of commentaires">
+              <div class="commentaire-header">
+                <span class="commentaire-auteur">{{ commentaire.pseudo }}</span>
+                <!-- <span class="commentaire-date">{{ commentaire.date | date }}</span> -->
+              </div>
+              <div class="commentaire-texte">{{ commentaire.texte }}</div>
+              <a  class="modifier" >Modifier</a>
+              <a  class="supprimer"  (click)="deleteCommentaire(commentaire._id)">Supprimer</a>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
 </div>

@@ -31,6 +31,10 @@ export class AppComponent {
     console.log(localStorage.getItem('token'));
   }
 
+  myProfil() {
+    
+  }
+
   openPopup(): void {
     const dialogRef = this.dialog.open(PopupBtcComponent, {
       width: '250px', // Largeur de la fenêtre modale

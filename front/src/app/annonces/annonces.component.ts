@@ -30,7 +30,6 @@ export class AnnoncesComponent implements OnInit {
   uneAnnonce(id: string) {
     this.annonceService.getAnnonce(id).subscribe(
     );
-
   }
 
   deleteAnnonce(id: string) {
@@ -39,5 +38,9 @@ export class AnnoncesComponent implements OnInit {
         // Recharge la page
         location.reload()
       });
+  }
+
+  ajouterCommentaire() {
+
   }
 }

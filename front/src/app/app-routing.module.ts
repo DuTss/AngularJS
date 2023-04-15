@@ -9,22 +9,27 @@ import { LoginComponent }                   from './login/login.component';
 import { SignupComponent }                  from './signup/signup.component';
 import { AboutComponent }                   from './about/about.component';
 import { ChatComponent }                    from './chat/chat.component';
+import { ProfilComponent }                  from './profil/profil.component';
 import { AuthGuard }                        from './auth.guard';
 import { AuthService }                      from './services/auth.service';
 import { ModalModule }                      from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
+  //ANNONCES
   { path: 'annonces',              component: AnnoncesComponent,     canActivate: [AuthGuard]  },
   { path: 'ajouter_annonce',       component: AddAnnonceComponent,   canActivate: [AuthGuard]  },
   { path: 'une_annonce/:id',       component: SingleAnnonceComponent,canActivate: [AuthGuard]  },
   { path: 'modifier_annonce/:id',  component: UpdateAnnonceComponent,canActivate: [AuthGuard]  },
   { path: 'supprimer_annonce/:id', component: UpdateAnnonceComponent,canActivate: [AuthGuard]  },
 
+  // AUTHENTIFICATION
   { path: 'login',                 component: LoginComponent },
   { path: 'signup',                component: SignupComponent },
 
+  // PAGES CHAT ET A PROPOS
   { path: 'about',                 component: AboutComponent },
-  { path: 'chat',                  component: ChatComponent },
+  { path: 'chat',                  component: ChatComponent         ,canActivate: [AuthGuard]  },
+  { path: 'profil',                component: ProfilComponent       ,canActivate: [AuthGuard]  },
 ];
 
 @NgModule({
