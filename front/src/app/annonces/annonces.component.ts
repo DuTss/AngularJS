@@ -14,6 +14,8 @@ import { ActivatedRoute } from "@angular/router";
 export class AnnoncesComponent implements OnInit {
   annonces: Annonce[] = [];
   user: User[]= [];
+  isFavorite: boolean = false;
+  currentUser: any;
 
   constructor(
     private annonceService: AnnonceService,
@@ -27,9 +29,20 @@ export class AnnoncesComponent implements OnInit {
       .subscribe(annonces => this.annonces = annonces);
   }
 
+  toggleFavorite(annonceId: string): void {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    this.isFavorite = !this.isFavorite;
+    console.log("THIS ANNONCES => ",this.annonces);
+
+    if (this.isFavorite) {
+      this.AuthService.addFavoris(this.currentUser.user._id,annonceId).subscribe();
+    } else {
+      this.AuthService.removeFavoris(this.currentUser.user._id,annonceId).subscribe();
+    }
+  }
+
   uneAnnonce(id: string) {
-    this.annonceService.getAnnonce(id).subscribe(
-    );
+    this.annonceService.getAnnonce(id).subscribe();
   }
 
   deleteAnnonce(id: string) {
@@ -38,9 +51,5 @@ export class AnnoncesComponent implements OnInit {
         // Recharge la page
         location.reload()
       });
-  }
-
-  ajouterCommentaire() {
-
   }
 }

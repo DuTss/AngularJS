@@ -3,4 +3,5 @@ export interface User {
     pseudo: string;
     lieu: string;
     mdp: string;
+    favoris: string[];
 }

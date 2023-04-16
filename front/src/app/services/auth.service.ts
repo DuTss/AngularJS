@@ -105,4 +105,35 @@ export class AuthService {
         })
       );
   }
+
+  addFavoris(userId: string, annonceId: string): Observable<any> {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    const token = currentUser.token;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    const url = `${this.apiUrl}user/${userId}/favoris`;
+    const body = {annonceId: annonceId};
+    return this.http.post<any>(url, body,{headers}).pipe(
+      catchError((error) => {
+        return throwError(error);
+      })
+    );
+  }
+
+  removeFavoris(userId: string, annonceId: string): Observable<any> {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    const token = currentUser.token;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    const url = `${this.apiUrl}user/${userId}/favoris/${annonceId}`;
+    return this.http.delete<any>(url,{headers}).pipe(
+      catchError((error) => {
+        return throwError(error);
+      })
+    );
+  }
 }

@@ -7,28 +7,30 @@
           <p  class="annonce_prix">     {{ annonces.prix }}</p>
           <img src="../../assets/icons/Satoshi-symbol.png">
         </div>
-        <p  class="annonce_lieu">       {{ annonces.lieu }}</p>
+        <p  class="annonce_lieu">{{ annonces.lieu }}</p>
         <p  class="annonce_flag_verif"    *ngIf="annonces.flag">Annonce vérifiée</p>
         <p  class="annonce_flag_no_verif" *ngIf="!annonces.flag">Annonce non vérifiée</p>
         <p  class="ajouter_par"><i>Ajouté par : </i><b>{{ annonces.ajouter_par }}</b></p>
         <a  class="modifier"  [routerLink]="['/modifier_annonce', annonces._id]" >Modifier</a>
-        <a  class="supprimer"  (click)="deleteAnnonce(annonces._id)">Clotûré l'annonce</a>
+        <a  class="supprimer"       (click)="deleteAnnonce(annonces._id)">Clotûré l'annonce</a>
         <button class="btn-comment" (click)="toggleCommentInput()">Commenter</button>
-        <div class="comment-form" *ngIf="showCommentInput">
-          <input type="text" class="comment-input" [(ngModel)]="commentaire.texte" placeholder="Votre commentaire">
-          <button class="comment-submit" (click)="onSubmit()">Envoyer</button>
+        <div    class="comment-form" *ngIf="showCommentInput">
+          <input  type="text" class="comment-input" (keydown.enter)="onSubmit()" [(ngModel)]="commentaire.texte" placeholder="Votre commentaire">
+          <button class="comment-submit" (click)="onSubmit()" >Envoyer</button>
         </div>
         <div class="commentaires">
           <h4>Commentaires</h4>
-          <ul>
-            <li *ngFor="let commentaire of commentaires">
+          <ul class="commentaire">
+            <li class="commentaire_li"  *ngFor="let commentaire of commentaires">
               <div class="commentaire-header">
-                <span class="commentaire-auteur">{{ commentaire.pseudo }}</span>
+                <span class="commentaire-auteur"><span class="poster_par">Posté par : </span>{{ commentaire.pseudo }}</span>
                 <!-- <span class="commentaire-date">{{ commentaire.date | date }}</span> -->
               </div>
               <div class="commentaire-texte">{{ commentaire.texte }}</div>
-              <a  class="modifier" >Modifier</a>
-              <a  class="supprimer"  (click)="deleteCommentaire(commentaire._id)">Supprimer</a>
+              <div class="commentaire-buttons">
+                <a   ><img class="modifier_comm" src="../../assets/icons/refresh_update.png"></a>
+                <a    (click)="deleteCommentaire(commentaire._id)"><img class="supprimer_comm" src="../../assets/icons/comment-delete.png"></a>
+              </div>
             </li>
           </ul>
         </div>

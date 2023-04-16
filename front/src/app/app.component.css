@@ -1,8 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -18,11 +23,6 @@
   font-weight: bold;
   color: #333;
   text-decoration: none;
-}
-
-.navbar-logo img {
-  height: 40px;
-  margin-right: 10px;
 }
 
 .navbar-links {
@@ -61,8 +61,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 0 32px;
+  height: 28px;
+  padding: 0 16px;
   border-radius: 24px;
   font-size: 18px;
   font-weight: bold;
@@ -128,10 +128,15 @@
   height: 16px;
 }
 
+.logo {
+  width: 50px;
+  height: 40px;
+}
+
 .mode-switch {
   position: relative;
-  width: 90px;
-  height: 30px;
+  width: 52px;
+  height: 28px;
   border: 2px solid black;
   border-radius: 20px;
 }
@@ -168,39 +173,38 @@
 }
 
 .mode-switch-icon.sun {
-  left: 10px;
+  left: 4px;
   background-image: url("src/assets/icons/sun81.png");
+  z-index: 9999;
 }
 
 .mode-switch-icon.moon {
-  right: 10px;
+  right: 4px;
   background-image: url("src/assets/icons/moon25.png");
+  z-index: 9999;
 }
 
 .mode-switch-checkbox:checked ~ .mode-switch-label {
   background-color: #ff9800;
 }
 
-.mode-switch-checkbox:checked ~ .mode-switch-label .mode-switch-icon.sun {
+.mode-switch-checkbox:checked ~ .mode-switch-label .mode-switch-bg {
   transform: translateX(30px);
 }
 
 .mode-switch-bg {
   position: absolute;
-  top: 50%;
-  left: 80%;
-  transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
+  top: 8%;
+  left: 53%;
+  //transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
   border-radius: 50%;
   background-color: #fff;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.mode-switch-bg {
-  transform: translateX(-70px);
-}
 
 .mode-switch-checkbox:checked ~ .mode-switch-bg {
-  background-color: #333;
+  transform: translateX(-25px);
 }

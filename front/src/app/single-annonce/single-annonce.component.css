@@ -8,13 +8,21 @@ h2 {
   font-weight: bold;
 }
 
+:root {
+  --main-color: #3e3e3e; /* Couleur principale */
+  --secondary-color: #7d7d7d; /* Couleur secondaire */
+  --background-color: #d4af37; /* Couleur de fond */
+  --border-color: #ffa500; /* Couleur de bordure */
+  --shadow-color: #ff5733; /* Couleur d'ombre */
+  --font-family: Helvetica, Arial, sans-serif; /* Police de caractères */
+}
+
 /* ============== ANNONCES ============== */
 
 .annonces {
-  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  margin: 10px;
   overflow: hidden;
 }
 
@@ -34,11 +42,15 @@ h2 {
 
 .annonces li {
   border: 2px solid #ddd;
-  background-color: #fda769;
-  padding: 25px;
+  background-color: #000000;
+  padding: 15px;
   border-radius: 15px;
   max-width: 400px; /* ou toute autre valeur appropriée */
   margin: 10px; /* pour donner de l'espace entre les annonces empilées */
+}
+
+.annonces li p {
+  color: #ffa500;
 }
 
 .annonces li:last-child {
@@ -63,14 +75,14 @@ h2 {
 }
 
 .annonce_titre {
-  color: #473c33;
+  color: #ffa500;
   margin: 0;
   font-size: 22px;
   font-weight: bolder;
 }
 
 .annonce_titre:hover {
-  color: #fec868;
+  color: #ff6000;
   text-decoration: underline;
 }
 
@@ -104,7 +116,7 @@ h2 {
 }
 
 .supprimer {
-  background-color: #b50405; /* Couleur rouge */
+  background-color: #8e0000; /* Couleur rouge */
   color: white;
   padding: 8px 15px;
   border: none;
@@ -117,7 +129,7 @@ h2 {
 }
 
 .modifier {
-  background-color: #4caf50; /* Couleur verte */
+  background-color: #005807; /* Couleur verte */
   color: white;
   padding: 8px 15px;
   border: none;
@@ -131,12 +143,12 @@ h2 {
 
 .modifier:hover {
   background-color: #3e8e41; /* Couleur verte foncée au survol */
-  box-shadow: 0 5px #2e8b57;
+  box-shadow: 0 5px #005807;
 }
 
 .supprimer:hover {
   background-color: #b50405; /* Couleur rouge foncée au survol */
-  box-shadow: 0 5px #df0101;
+  box-shadow: 0 5px #8e0000;
 }
 
 .modifier:active {
@@ -195,4 +207,52 @@ h2 {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 10px;
+}
+
+.commentaire_li {
+  width: 250px;
+  padding: 0;
+}
+
+.commentaire {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.commentaire-texte {
+  padding: 8px;
+  margin-bottom: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modifier_comm,
+.supprimer_comm {
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.commentaire-auteur {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commentaire-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poster_par {
+  font-weight: normal !important;
+  font-size: 14px !important;
 }

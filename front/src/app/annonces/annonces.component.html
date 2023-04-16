@@ -2,16 +2,14 @@
 <div class="annonces">
   <ul class="liste_annonce">
     <li *ngFor="let annonce of annonces" class="annonce-item">
+      <img class="heart_fav" *ngIf="!isFavorite" src="../../assets/icons/heart15.png" (click)="toggleFavorite(annonce._id)">
+      <img class="heart_fav" *ngIf="isFavorite" src="../../assets/icons/heart222.png" (click)="toggleFavorite(annonce._id)">
       <div class="annonce-header">
         <a [routerLink]="['/une_annonce', annonce._id]" class="annonce-link">
           <h3 class="annonce-titre">{{ annonce.titre }}</h3>
         </a>
-        <div class="annonce-flag">
-          <p class="annonce-flag-text" *ngIf="annonce.flag">Annonce vérifiée</p>
-          <p class="annonce-flag-text" *ngIf="!annonce.flag">Annonce non vérifiée</p>
-        </div>
       </div>
-      <p class="annonce-description">{{ annonce.description }}</p>
+      <!-- <p class="annonce-description">{{ annonce.description }}</p> -->
       <div class="annonce-footer">
         <div class="annonce_prix_satoshi">
           <p  class="annonce_prix">     {{ annonce.prix }}</p>
@@ -19,6 +17,10 @@
         </div>
         <div class="annonce-details">
           <p class="annonce-lieu">{{ annonce.lieu }}</p>
+          <div class="annonce-flag">
+            <p class="annonce-flag-text" *ngIf="annonce.flag">Annonce vérifiée</p>
+            <p class="annonce-flag-text" *ngIf="!annonce.flag">Annonce non vérifiée</p>
+          </div>
           <p class="annonce-ajout"><i>Ajoutée par : </i><b>{{ annonce.ajouter_par }}</b></p>
         </div>
       </div>

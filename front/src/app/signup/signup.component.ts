@@ -13,7 +13,8 @@ export class SignupComponent {
     _id : '',
     pseudo: '',
     lieu: '',
-    mdp: ''
+    mdp: '',
+    favoris:[]
   };
   errorMsg = '';
 
