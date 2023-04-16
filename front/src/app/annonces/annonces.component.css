@@ -54,12 +54,16 @@ h2 {
   flex-wrap: wrap;
 }
 
+.heart-icon.filled {
+  color: red;
+}
+
 .annonces li {
   border: 2px solid #ddd;
   background-color: #ffa500;
   padding: 15px;
   border-radius: 15px;
-  max-width: 400px; /* ou toute autre valeur appropriée */
+  max-width: 250px; /* ou toute autre valeur appropriée */
   margin: 10px; /* pour donner de l'espace entre les annonces empilées */
 }
 

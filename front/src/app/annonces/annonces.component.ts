@@ -14,7 +14,7 @@ import { ActivatedRoute } from "@angular/router";
 export class AnnoncesComponent implements OnInit {
   annonces: Annonce[] = [];
   user: User[]= [];
-  isFavorite: boolean = false;
+  isFavorite: boolean | undefined;
   currentUser: any;
 
   constructor(
@@ -29,16 +29,24 @@ export class AnnoncesComponent implements OnInit {
       .subscribe(annonces => this.annonces = annonces);
   }
 
-  toggleFavorite(annonceId: string): void {
+  toggleFavorite(annonceId: string) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
-    this.isFavorite = !this.isFavorite;
-    console.log("THIS ANNONCES => ",this.annonces);
+    const userId = this.currentUser.user._id;
 
-    if (this.isFavorite) {
-      this.AuthService.addFavoris(this.currentUser.user._id,annonceId).subscribe();
-    } else {
-      this.AuthService.removeFavoris(this.currentUser.user._id,annonceId).subscribe();
-    }
+    this.AuthService.getUser(userId).subscribe(user => {
+      const isFavorite = user.favoris.indexOf(annonceId);
+      if (isFavorite === -1) {
+        // L'annonce n'est pas dans la liste des favoris de l'utilisateur
+        this.currentUser.user.favoris.push(annonceId);
+        this.AuthService.addFavoris(userId, annonceId).subscribe();
+        this.isFavorite = true;
+      } else {
+        const annonceIndex = user.favoris.indexOf(annonceId);
+        this.currentUser.user.favoris.splice(annonceIndex, 1);
+        this.AuthService.removeFavoris(userId, annonceId).subscribe();
+        this.isFavorite = false;
+      }
+    });
   }
 
   uneAnnonce(id: string) {

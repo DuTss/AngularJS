@@ -2,8 +2,8 @@
 <div class="annonces">
   <ul class="liste_annonce">
     <li *ngFor="let annonce of annonces" class="annonce-item">
-      <img class="heart_fav" *ngIf="!isFavorite" src="../../assets/icons/heart15.png" (click)="toggleFavorite(annonce._id)">
-      <img class="heart_fav" *ngIf="isFavorite" src="../../assets/icons/heart222.png" (click)="toggleFavorite(annonce._id)">
+      <img class="heart_fav" *ngIf="isFavorite" src="../../assets/icons/heart15.png" (click)="toggleFavorite(annonce._id)">
+      <img class="heart_fav" *ngIf="!isFavorite" src="../../assets/icons/heart222.png" (click)="toggleFavorite(annonce._id)">
       <div class="annonce-header">
         <a [routerLink]="['/une_annonce', annonce._id]" class="annonce-link">
           <h3 class="annonce-titre">{{ annonce.titre }}</h3>

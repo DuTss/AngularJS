@@ -15,6 +15,8 @@ import { ChatComponent } from './chat/chat.component';
 import { ProfilComponent } from './profil/profil.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 
@@ -37,6 +39,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

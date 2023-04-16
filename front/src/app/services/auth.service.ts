@@ -116,23 +116,53 @@ export class AuthService {
     const url = `${this.apiUrl}user/${userId}/favoris`;
     const body = {annonceId: annonceId};
     return this.http.post<any>(url, body,{headers}).pipe(
+      map((response) => {
+        return response;
+      }),
       catchError((error) => {
-        return throwError(error);
+        return throwError(error.error.message);
       })
     );
   }
 
+  // removeFavoris(userId: string, annonceId: string): Observable<any> {
+  //   const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  //   const token = currentUser.token;
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     Authorization: `Bearer ${token}`
+  //   });
+  //   const url = `${this.apiUrl}user/${userId}/favoris/${annonceId}`;
+  //   return this.http.delete<any>(url,{headers}).pipe(
+  //     map((response) => {
+  //       console.log("REPONSE ==> ",response);
+  //       return response;
+  //     }),
+  //     catchError((error) => {
+  //       return throwError(error.error.message);
+  //     })
+  //   );
+  // }
+
   removeFavoris(userId: string, annonceId: string): Observable<any> {
+    const url = `${this.apiUrl}user/${userId}/favoris/${annonceId}`;
+    return this.http.delete(url);
+  }
+
+  getUser(userId:string): Observable<any> {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     const token = currentUser.token;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
     });
-    const url = `${this.apiUrl}user/${userId}/favoris/${annonceId}`;
-    return this.http.delete<any>(url,{headers}).pipe(
+    const url = `${this.apiUrl}user/${userId}`;
+    return this.http.get<any>(url, { headers }).pipe(
+      map((response) => {
+        return response;
+      }),
       catchError((error) => {
-        return throwError(error);
+        return throwError(error.error.message);
       })
     );
   }
