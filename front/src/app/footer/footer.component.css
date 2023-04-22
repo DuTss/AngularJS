@@ -1,4 +1,13 @@
 /* Reset CSS */
+/* Couleurs de base */
+:root {
+  --main-color: #3e3e3e; /* Couleur principale */
+  --secondary-color: #7d7d7d; /* Couleur secondaire */
+  --background-color: #d4af37; /* Couleur de fond */
+  --border-color: #ffa500; /* Couleur de bordure */
+  --shadow-color: #ff5733; /* Couleur d'ombre */
+  --font-family: Helvetica, Arial, sans-serif; /* Police de caractères */
+}
 
 * {
   margin: 0;
@@ -9,15 +18,15 @@
 /* Footer */
 
 .footer {
-  background-color: #222;
+  background-color: #d4af37;
   color: #fff;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 15px;
 }
 
 .footer-columns {
@@ -40,7 +49,7 @@
 }
 
 .footer-link {
-  color: #fff;
+  color: #3e3e3e;
   text-decoration: none;
   font-size: 16px;
   line-height: 1.5;
@@ -57,7 +66,7 @@
 }
 
 .footer-social-link {
-  color: #fff;
+  color: #3e3e3e;
   text-decoration: none;
   font-size: 24px;
   margin-right: 20px;
@@ -78,7 +87,7 @@
   color: #222;
   border: none;
   border-radius: 4px;
-  padding: 12px 24px;
+  padding: 6px 12px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -86,7 +95,7 @@
 }
 
 .donate-btn:hover {
-  background-color: #d4af37;
+  background-color: #fff;
 }
 
 .donate-text {

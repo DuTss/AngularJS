@@ -3,6 +3,7 @@ import { Annonce } from '../models/annonce';
 import { AnnonceService } from '../services/annonce.service';
 import { Router } from '@angular/router';
 import { AuthService } from "../services/auth.service";
+import { FileSystemEntry,FileSystemDirectoryEntry } from 'ngx-file-drop';
 
 @Component({
   selector: 'app-add-annonce',
@@ -18,14 +19,23 @@ export class AddAnnonceComponent {
     prix: 0,
     flag: false,
     ajouter_par: '',
+    image:''
   };
   currentUser: any;
+
 
   constructor(
     private annonceService: AnnonceService,
     private router: Router,
     private authService: AuthService
   ) {}
+
+  onImageSelect(event: any) {
+    console.log("EVENT TARGET ==>  ",event.target);
+    const file = event.target.files[0];
+    this.annonce.image = file;
+    console.log("THIS IMAGE ==>  ",this.annonce.image);
+  }
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
@@ -36,7 +46,7 @@ export class AddAnnonceComponent {
   }
 
   onSubmit() {
-    this.annonceService.addAnnonce(this.annonce).subscribe(() => {
+    this.annonceService.addAnnonce(this.annonce, this.annonce.image).subscribe(() => {
       // Rediriger vers la page /annonces
       this.router.navigateByUrl('/annonces');
     });

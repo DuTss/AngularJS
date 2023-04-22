@@ -15,6 +15,7 @@ import { ChatComponent } from './chat/chat.component';
 import { ProfilComponent } from './profil/profil.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NgxFileDropModule } from 'ngx-file-drop';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
@@ -39,7 +40,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxFileDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

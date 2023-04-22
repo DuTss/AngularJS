@@ -20,8 +20,18 @@ export class AnnonceService {
     return this.http.get<Annonce>(url);
   }
 
-  addAnnonce(annonce: Annonce): Observable<Annonce> {
-    return this.http.post<Annonce>(this.apiUrl, annonce);
+  addAnnonce(annonce: Annonce, file: string): Observable<Annonce> {
+    const formData = new FormData();
+    formData.append('image', JSON.stringify(file));
+    formData.append('annonce', JSON.stringify(annonce));
+    return this.http.post<Annonce>(this.apiUrl, formData);
+  }
+
+  uploadFile(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.http.post<any>(`${this.apiUrl}/upload`, formData);
   }
 
   updateAnnonce(id: string, annonce: Annonce): Observable<any> {
