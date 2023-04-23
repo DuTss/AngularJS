@@ -6,23 +6,10 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-logo {
-  flex-grow: 1;
-}
-
-.navbar-logo a {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
 }
 
 .navbar-links {
@@ -137,7 +124,7 @@
   position: relative;
   width: 52px;
   height: 28px;
-  border: 2px solid black;
+  border: 1.5px solid orange;
   border-radius: 20px;
 }
 
@@ -173,30 +160,29 @@
 }
 
 .mode-switch-icon.sun {
-  left: 4px;
+  left: 2px;
   background-image: url("src/assets/icons/sun81.png");
   z-index: 9999;
 }
 
 .mode-switch-icon.moon {
-  right: 4px;
+  right: 1.5px;
   background-image: url("src/assets/icons/moon25.png");
   z-index: 9999;
 }
 
-.mode-switch-checkbox:checked ~ .mode-switch-label {
+.mode-switch-checkbox:checked~.mode-switch-label {
   background-color: #ff9800;
 }
 
-.mode-switch-checkbox:checked ~ .mode-switch-label .mode-switch-bg {
-  transform: translateX(30px);
+.mode-switch-checkbox:checked~.mode-switch-label .mode-switch-bg {
+  transform: translateX(25px);
 }
 
 .mode-switch-bg {
   position: absolute;
   top: 8%;
   left: 53%;
-  //transform: translate(-50%, -50%);
   width: 23px;
   height: 23px;
   border-radius: 50%;
@@ -205,6 +191,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.mode-switch-checkbox:checked ~ .mode-switch-bg {
-  transform: translateX(-25px);
+.mode-switch-checkbox:checked~.mode-switch-bg {
+  transform: translateX(-26px);
 }

@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar"  [ngClass]="{'dark': isDarkMode}">
   <div class="navbar-logo">
     <a href="/">
       <img src="../../assets/icons/Bitcoin.svg" class="logo" alt="Bitcoin Icon">
@@ -24,7 +24,7 @@
     <a *ngIf="isAuthenticated()" class="btn btn-primary" (click)="onSubmit()">Se déconnecter</a>
     <a *ngIf="!isAuthenticated()" routerLink="/signup" class="btn btn-secondary">Inscription</a>
     <div class="mode-switch">
-      <input type="checkbox" id="mode-switch" class="mode-switch-checkbox" />
+      <input type="checkbox" id="mode-switch" class="mode-switch-checkbox" [(ngModel)]="isDarkMode" />
       <label for="mode-switch" class="mode-switch-label">
         <span class="mode-switch-icon sun"></span>
         <span class="mode-switch-icon moon"></span>
@@ -33,7 +33,8 @@
     </div>
   </div>
 </nav>
+<div [ngClass]="{'dark': isDarkMode}">
+  <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
-
-<app-footer></app-footer>
+  <app-footer></app-footer>
+</div>

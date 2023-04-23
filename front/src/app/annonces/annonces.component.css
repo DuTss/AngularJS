@@ -1,11 +1,17 @@
 /* Couleurs de base */
 :root {
-  --main-color: #3e3e3e; /* Couleur principale */
-  --secondary-color: #7d7d7d; /* Couleur secondaire */
-  --background-color: #d4af37; /* Couleur de fond */
-  --border-color: #ffa500; /* Couleur de bordure */
-  --shadow-color: #ff5733; /* Couleur d'ombre */
-  --font-family: Helvetica, Arial, sans-serif; /* Police de caractères */
+  --main-color: #3e3e3e;
+  /* Couleur principale */
+  --secondary-color: #7d7d7d;
+  /* Couleur secondaire */
+  --background-color: #d4af37;
+  /* Couleur de fond */
+  --border-color: #ffa500;
+  /* Couleur de bordure */
+  --shadow-color: #ff5733;
+  /* Couleur d'ombre */
+  --font-family: Helvetica, Arial, sans-serif;
+  /* Police de caractères */
 }
 
 /* ============================ TITRES ============================ */
@@ -31,6 +37,11 @@ h2 {
 }
 
 /* ============================ ANNONCES ============================ */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .annonces {
   background-color: #fff;
@@ -46,7 +57,7 @@ h2 {
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .liste_annonce {
@@ -59,12 +70,13 @@ h2 {
 }
 
 .annonces li {
-  border: 2px solid #ddd;
   background-color: #ffa500;
   padding: 15px;
   border-radius: 15px;
-  max-width: 250px; /* ou toute autre valeur appropriée */
-  margin: 10px; /* pour donner de l'espace entre les annonces empilées */
+  max-width: 210px;
+  /* ou toute autre valeur appropriée */
+  margin: 10px;
+  /* pour donner de l'espace entre les annonces empilées */
 }
 
 .annonces li:last-child {
@@ -110,50 +122,63 @@ h2 {
 }
 
 .supprimer {
-  background-color: #b50405; /* Couleur rouge */
+  background-color: #b50405;
+  /* Couleur rouge */
   color: white;
   padding: 4px 8px;
   border: none;
-  border-radius: 25px; /* Bords arrondis */
-  box-shadow: 0 5px #df0101; /* Relief */
+  border-radius: 25px;
+  /* Bords arrondis */
+  box-shadow: 0 5px #df0101;
+  /* Relief */
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .modifier {
-  background-color: #4caf50; /* Couleur verte */
+  background-color: #4caf50;
+  /* Couleur verte */
   color: white;
   padding: 4px 8px;
   border: none;
-  border-radius: 25px; /* Bords arrondis */
-  box-shadow: 0 5px #2e8b57; /* Relief */
+  border-radius: 25px;
+  /* Bords arrondis */
+  box-shadow: 0 5px #2e8b57;
+  /* Relief */
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out; /* Animation de transition */
+  transition: all 0.3s ease-in-out;
+  /* Animation de transition */
   margin-right: 5px;
 }
 
 .modifier:hover {
-  background-color: #3e8e41; /* Couleur verte foncée au survol */
+  background-color: #3e8e41;
+  /* Couleur verte foncée au survol */
   box-shadow: 0 5px #2e8b57;
 }
 
 .supprimer:hover {
-  background-color: #d62d20; /* Couleur rouge foncée au survol */
+  background-color: #d62d20;
+  /* Couleur rouge foncée au survol */
   box-shadow: 0 5px #df0101;
 }
 
 .modifier:active {
-  background-color: #2e6f34; /* Couleur verte foncée au clic */
+  background-color: #2e6f34;
+  /* Couleur verte foncée au clic */
   box-shadow: 0 2px #2e8b57;
-  transform: translateY(3px); /* Effet de pression */
+  transform: translateY(3px);
+  /* Effet de pression */
 }
 
 .supprimer:active {
-  background-color: #df0101; /* Couleur rouge foncée au clic */
+  background-color: #df0101;
+  /* Couleur rouge foncée au clic */
   box-shadow: 0 2px #df0101;
-  transform: translateY(3px); /* Effet de pression */
+  transform: translateY(3px);
+  /* Effet de pression */
 }
 
 .annonce-flag-text {

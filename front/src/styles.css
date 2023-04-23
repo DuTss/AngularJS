@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0 !important;
+}
+
+.dark {
+    background-color: #121212 !important;
+    color: #fff;
+}
+
+.dark .annonces,
+.dark .container {
+    background-color: #121212 !important;
+}
+
+.dark a,
+.dark p {
+    color: white !important;
+}
