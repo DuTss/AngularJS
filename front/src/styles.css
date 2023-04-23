@@ -14,6 +14,22 @@ body {
 }
 
 .dark a,
-.dark p {
+.dark p,
+.dark h1,
+.dark h2,
+.dark ul li {
     color: white !important;
+}
+
+.dark form {
+    width: 400px;
+    background-color: #0e0e0e !important;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0);
+}
+
+.dark form label,
+.dark form label input {
+    color: #fff !important;
 }

@@ -60,3 +60,7 @@ button[type="submit"]:hover {
   font-size: 14px;
   margin-top: 10px;
 }
+
+.inscription_link {
+  text-decoration: none;
+}

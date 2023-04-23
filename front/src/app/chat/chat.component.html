@@ -4,8 +4,8 @@
     <p>{{roomId}}</p>
   </div>
   <div class="chat-messages">
-    <ul class="flex-column-reverse">
-      <li *ngFor="let msg of messages" class="message-container">
+    <ul class="flex-column-reverse" *ngFor="let msg of messages">
+      <li  class="message-container">
         <div class="message">{{msg.text}}</div>
       </li>
     </ul>
