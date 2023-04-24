@@ -27,6 +27,7 @@ export class AnnoncesComponent implements OnInit {
   ngOnInit() {
     this.http.get<Annonce[]>('http://localhost:3001/post')
       .subscribe(annonces => this.annonces = annonces);
+
   }
 
   toggleFavorite(annonceId: string) {

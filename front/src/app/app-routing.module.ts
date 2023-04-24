@@ -23,11 +23,11 @@ const routes: Routes = [
   { path: 'supprimer_annonce/:id', component: UpdateAnnonceComponent,canActivate: [AuthGuard]  },
 
   // AUTHENTIFICATION
-  { path: 'login',                 component: LoginComponent },
-  { path: 'signup',                component: SignupComponent },
+  { path: 'login',                 component: LoginComponent                                   },
+  { path: 'signup',                component: SignupComponent                                  },
 
   // PAGES CHAT ET A PROPOS
-  { path: 'about',                 component: AboutComponent },
+  { path: 'about',                 component: AboutComponent                                   },
   { path: 'chat',                  component: ChatComponent         ,canActivate: [AuthGuard]  },
   { path: 'profil',                component: ProfilComponent       ,canActivate: [AuthGuard]  },
 ];

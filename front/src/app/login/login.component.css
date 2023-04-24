@@ -64,3 +64,8 @@ button[type="submit"]:hover {
 .inscription_link {
   text-decoration: none;
 }
+
+.errorMsg {
+  color: red;
+  font-size: 18px;
+}
