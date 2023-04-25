@@ -16,6 +16,7 @@ export class AnnoncesComponent implements OnInit {
   user: User[]= [];
   isFavorite: boolean | undefined;
   currentUser: any;
+  isUser: boolean | undefined;
 
   constructor(
     private annonceService: AnnonceService,
@@ -26,8 +27,7 @@ export class AnnoncesComponent implements OnInit {
 
   ngOnInit() {
     this.http.get<Annonce[]>('http://localhost:3001/post')
-      .subscribe(annonces => this.annonces = annonces);
-
+    .subscribe(annonces => this.annonces = annonces);
   }
 
   toggleFavorite(annonceId: string) {

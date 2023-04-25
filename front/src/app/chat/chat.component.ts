@@ -37,7 +37,14 @@ export class ChatComponent implements OnInit {
   sendMessage(): void {
     this.ChatService.sendMessage(this.message, this.roomId);
     this.lastMessageSent = this.message;
-
+    const newMessage: Message = {
+      text: this.lastMessageSent,
+      roomId: this.roomId
+      // Ajoutez d'autres propriétés ici si nécessaire
+    };
+    this.messages.unshift(newMessage);
+console.log("message  ",this.message);
+console.log("messages  ",this.messages);
   // Inverser l'ordre des éléments de la liste des messages
   this.messages.reverse();
     this.message = '';

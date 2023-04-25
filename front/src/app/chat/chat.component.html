@@ -9,7 +9,7 @@
         <div class="message">{{msg.text}}</div>
       </li>
     </ul>
-    <div *ngIf="lastMessageSent" class="message-sent">{{lastMessageSent}}</div>
+    <!-- <div *ngIf="lastMessageSent" class="message-sent">{{lastMessageSent}}</div> -->
   </div>
   <div class="chat-input">
     <input type="text" placeholder="Type your message" [(ngModel)]="message" (keydown.enter)="sendMessage()">

@@ -26,8 +26,8 @@
           </div>
         </div>
         <div class="annonce-actions">
-          <a class="modifier"  [routerLink]="['/modifier_annonce', annonce._id]">Modifier</a>
-          <a class="supprimer" (click)="deleteAnnonce(annonce._id)">Clotûrer l'annonce</a>
+          <a class="modifier"  *ngIf="!isUser" [routerLink]="['/modifier_annonce', annonce._id]">Modifier</a>
+          <a class="supprimer" *ngIf="!isUser" (click)="deleteAnnonce(annonce._id)">Clotûrer l'annonce</a>
         </div>
       </li>
     </ul>
