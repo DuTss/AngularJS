@@ -8,13 +8,19 @@ import { SingleAnnonceComponent }           from './single-annonce/single-annonc
 import { LoginComponent }                   from './login/login.component';
 import { SignupComponent }                  from './signup/signup.component';
 import { AboutComponent }                   from './about/about.component';
+import { JoinUsComponent }                  from './join-us/join-us.component';
+import { MesMessagesComponent }             from './mes-messages/mes-messages.component';
 import { ChatComponent }                    from './chat/chat.component';
 import { ProfilComponent }                  from './profil/profil.component';
+import { HomepageComponent }                from './homepage/homepage.component';
 import { AuthGuard }                        from './auth.guard';
 import { AuthService }                      from './services/auth.service';
 import { ModalModule }                      from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
+
+  { path: 'homepage',                component: HomepageComponent                              },
+
   //ANNONCES
   { path: 'annonces',              component: AnnoncesComponent,     canActivate: [AuthGuard]  },
   { path: 'ajouter_annonce',       component: AddAnnonceComponent,   canActivate: [AuthGuard]  },
@@ -28,7 +34,9 @@ const routes: Routes = [
 
   // PAGES CHAT ET A PROPOS
   { path: 'about',                 component: AboutComponent                                   },
+  { path: 'join_us',               component: JoinUsComponent                                  },
   { path: 'chat',                  component: ChatComponent         ,canActivate: [AuthGuard]  },
+  { path: 'mes_messages',          component: MesMessagesComponent  ,canActivate: [AuthGuard]  },
   { path: 'profil',                component: ProfilComponent       ,canActivate: [AuthGuard]  },
 ];
 

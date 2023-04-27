@@ -1,0 +1,95 @@
+/* Styles pour la page "Mes messages" */
+
+/* Titre */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Description */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Liste des conversations */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 2rem;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+}
+
+li a:hover {
+    background-color: #e6e6e6;
+}
+
+li h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+li p {
+    font-size: 1rem;
+    margin: 0;
+    color: #888;
+}
+
+/* Formulaire de recherche */
+form {
+    margin-bottom: 2rem;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0062cc;
+}
+
+/* Bouton pour créer une nouvelle conversation */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0062cc;
+}

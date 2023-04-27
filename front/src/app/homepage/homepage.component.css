@@ -1,0 +1,80 @@
+/* CSS pour la page d'accueil BitLister */
+
+/* Styles pour le texte d'en-tête */
+#hero {
+    background-color: #F2F2F2;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2C2C2C;
+    margin-bottom: 32px;
+}
+
+.hero-text p {
+    font-size: 24px;
+    color: #2C2C2C;
+    margin-bottom: 48px;
+}
+
+.cta-button {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #FFB900;
+    padding: 20px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #F8A300;
+}
+
+/* Styles pour la section "Pourquoi Bitcoin ?" */
+#why-bitcoin {
+    text-align: center;
+    padding: 100px 0;
+}
+
+#why-bitcoin h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2C2C2C;
+    margin-bottom: 32px;
+}
+
+#why-bitcoin p {
+    font-size: 24px;
+    color: #2C2C2C;
+    margin-bottom: 48px;
+}
+
+/* Styles pour la section "Comment ça marche ?" */
+#how-it-works {
+    text-align: center;
+    padding: 100px 0;
+}
+
+#how-it-works h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2C2C2C;
+    margin-bottom: 32px;
+}
+
+#how-it-works ol {
+    list-style-type: none;
+    font-size: 24px;
+    color: #2C2C2C;
+    margin-bottom: 48px;
+}
+
+#how-it-works ol li {
+    margin-bottom: 16px;
+}

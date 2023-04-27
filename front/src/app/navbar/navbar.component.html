@@ -1,0 +1,36 @@
+<nav class="navbar"  [ngClass]="{'dark': isDarkMode}">
+    <div class="navbar-logo">
+      <a routerLink="/homepage">
+        <img src="../../assets/icons/Bitcoin.svg" class="logo" alt="Bitcoin Icon">
+      </a>
+    </div>
+    <ul class="navbar-links">
+      <li *ngIf="isAuthenticated()" class="navbar-link">
+        <a routerLink="/ajouter_annonce"><i class="fa-regular fa-square-plus"></i>Ajouter une annonce</a>
+      </li>
+      <li class="navbar-link">
+        <a routerLink="/annonces"><i class="fa-solid fa-bullhorn"></i>Annonces</a>
+      </li>
+      <li class="navbar-link">
+        <a routerLink="/about"><i class="fa-solid fa-people-group"></i>A propos</a>
+      </li>
+      <li *ngIf="isAuthenticated()" class="navbar-link">
+        <a routerLink="/mes_messages"><i class="fa-regular fa-message"></i>Mes messages</a>
+      </li>
+    </ul>
+    <div class="navbar-buttons">
+      <a *ngIf="!isAuthenticated()" routerLink="/login" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i>Connexion</a>
+      <a *ngIf="isAuthenticated()"  routerLink="/profil" class="btn btn-primary"><i class="fa-regular fa-user"></i>Mon profil</a>
+      <a *ngIf="isAuthenticated()" class="btn btn-primary" (click)="onSubmit()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Se déconnecter</a>
+      <a *ngIf="!isAuthenticated()" routerLink="/signup" class="btn btn-secondary"><i class="fa-solid fa-user-plus"></i>Inscription</a>
+      <div class="mode-switch">
+        <input type="checkbox" id="mode-switch" class="mode-switch-checkbox" [(ngModel)]="isDarkMode" />
+        <label for="mode-switch" class="mode-switch-label">
+          <span class="mode-switch-icon moon"></span>
+          <span class="mode-switch-icon sun"></span>
+        </label>
+        <div class="mode-switch-bg"></div>
+      </div>
+    </div>
+  </nav>
+  <div [ngClass]="{'dark': isDarkMode}">

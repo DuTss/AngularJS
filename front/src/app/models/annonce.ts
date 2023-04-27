@@ -6,7 +6,7 @@ export interface Annonce {
     prix:        number;
     flag:        boolean;
     ajouter_par: string;
-    image:       string;
+    // image:       string;
 }
 
 

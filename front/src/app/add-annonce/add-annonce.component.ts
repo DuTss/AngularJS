@@ -19,7 +19,7 @@ export class AddAnnonceComponent {
     prix: 0,
     flag: false,
     ajouter_par: '',
-    image:''
+    // image:''
   };
   currentUser: any;
 
@@ -33,8 +33,6 @@ export class AddAnnonceComponent {
   onImageSelect(event: any) {
     console.log("EVENT TARGET ==>  ",event.target);
     const file = event.target.files[0];
-    this.annonce.image = file;
-    console.log("THIS IMAGE ==>  ",this.annonce.image);
   }
 
   ngOnInit() {
@@ -46,7 +44,7 @@ export class AddAnnonceComponent {
   }
 
   onSubmit() {
-    this.annonceService.addAnnonce(this.annonce, this.annonce.image).subscribe(() => {
+    this.annonceService.addAnnonce(this.annonce).subscribe(() => {
       // Rediriger vers la page /annonces
       this.router.navigateByUrl('/annonces');
     });

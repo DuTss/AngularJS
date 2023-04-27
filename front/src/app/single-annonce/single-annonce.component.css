@@ -9,17 +9,32 @@ h2 {
 }
 
 :root {
-  --main-color: #3e3e3e; /* Couleur principale */
-  --secondary-color: #7d7d7d; /* Couleur secondaire */
-  --background-color: #d4af37; /* Couleur de fond */
-  --border-color: #ffa500; /* Couleur de bordure */
-  --shadow-color: #ff5733; /* Couleur d'ombre */
-  --font-family: Helvetica, Arial, sans-serif; /* Police de caractères */
+  --main-color: #3e3e3e;
+  /* Couleur principale */
+  --secondary-color: #7d7d7d;
+  /* Couleur secondaire */
+  --background-color: #d4af37;
+  /* Couleur de fond */
+  --border-color: #ffa500;
+  /* Couleur de bordure */
+  --shadow-color: #ff5733;
+  /* Couleur d'ombre */
+  --font-family: Helvetica, Arial, sans-serif;
+  /* Police de caractères */
 }
 
 /* ============== ANNONCES ============== */
 
-.annonces {
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.annonces,
+.annonce_profil {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 10px;
@@ -40,13 +55,20 @@ h2 {
   flex-wrap: wrap;
 }
 
-.annonces li {
+.annonces li,
+.annonce_profil li {
   border: 2px solid #ddd;
   background-color: #000000;
   padding: 15px;
   border-radius: 15px;
-  max-width: 400px; /* ou toute autre valeur appropriée */
-  margin: 10px; /* pour donner de l'espace entre les annonces empilées */
+  max-width: 400px;
+  /* ou toute autre valeur appropriée */
+  margin: 10px;
+  /* pour donner de l'espace entre les annonces empilées */
+}
+
+.annonce_profil ul li {
+  color: #fff;
 }
 
 .annonces li p {
@@ -116,12 +138,15 @@ h2 {
 }
 
 .supprimer {
-  background-color: #8e0000; /* Couleur rouge */
+  background-color: #8e0000;
+  /* Couleur rouge */
   color: white;
   padding: 8px 15px;
   border: none;
-  border-radius: 25px; /* Bords arrondis */
-  box-shadow: 0 5px #df0101; /* Relief */
+  border-radius: 25px;
+  /* Bords arrondis */
+  box-shadow: 0 5px #df0101;
+  /* Relief */
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -129,38 +154,48 @@ h2 {
 }
 
 .modifier {
-  background-color: #005807; /* Couleur verte */
+  background-color: #005807;
+  /* Couleur verte */
   color: white;
   padding: 8px 15px;
   border: none;
-  border-radius: 25px; /* Bords arrondis */
-  box-shadow: 0 5px #2e8b57; /* Relief */
+  border-radius: 25px;
+  /* Bords arrondis */
+  box-shadow: 0 5px #2e8b57;
+  /* Relief */
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out; /* Animation de transition */
+  transition: all 0.3s ease-in-out;
+  /* Animation de transition */
   margin: 5px;
 }
 
 .modifier:hover {
-  background-color: #3e8e41; /* Couleur verte foncée au survol */
+  background-color: #3e8e41;
+  /* Couleur verte foncée au survol */
   box-shadow: 0 5px #005807;
 }
 
 .supprimer:hover {
-  background-color: #b50405; /* Couleur rouge foncée au survol */
+  background-color: #b50405;
+  /* Couleur rouge foncée au survol */
   box-shadow: 0 5px #8e0000;
 }
 
 .modifier:active {
-  background-color: #2e6f34; /* Couleur verte foncée au clic */
+  background-color: #2e6f34;
+  /* Couleur verte foncée au clic */
   box-shadow: 0 2px #2e8b57;
-  transform: translateY(3px); /* Effet de pression */
+  transform: translateY(3px);
+  /* Effet de pression */
 }
 
 .supprimer:active {
-  background-color: #df0101; /* Couleur rouge foncée au clic */
+  background-color: #df0101;
+  /* Couleur rouge foncée au clic */
   box-shadow: 0 2px #df0101;
-  transform: translateY(3px); /* Effet de pression */
+  transform: translateY(3px);
+  /* Effet de pression */
 }
 
 .btn-comment {

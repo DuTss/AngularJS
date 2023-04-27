@@ -1,4 +1,5 @@
-<div class="annonces">
+<div class="container">
+  <div class="annonces">
     <ul class="liste_annonce">
       <li *ngIf="annonces">
         <h3 class="annonce_titre"><a>{{ annonces.titre }}</a></h3>
@@ -36,4 +37,15 @@
         </div>
       </li>
     </ul>
+  </div>
+  <div class="annonce_profil">
+    <div class="profil_div">
+      <ul class="profil">
+        <li>Michel DUPONT</li>
+        <li>NOMBRE D'ANNONCE</li>
+        <li>INSCRIS DEPUIS</li>
+        <button class="message">Message</button>
+      </ul>
+    </div>
+  </div>
 </div>

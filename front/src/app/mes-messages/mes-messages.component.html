@@ -1,0 +1,26 @@
+<main>
+    <h1>Mes messages</h1>
+    <a routerLink="/chat">CHAT</a>
+    <p>Ici, vous pouvez voir tous vos messages avec les autres utilisateurs de BitLister.</p>
+    
+    <!-- Liste des conversations -->
+    <ul>
+      <li>
+        <a href="chemin/vers/conversation?id=123">
+          <h2>Titre de la conversation</h2>
+          <p>Extrait du dernier message reçu ou envoyé</p>
+        </a>
+      </li>
+      <!-- Ajouter des éléments li pour chaque conversation -->
+    </ul>
+    
+    <!-- Formulaire de recherche -->
+    <form>
+      <label for="search">Rechercher une conversation :</label>
+      <input type="text" id="search" name="search">
+      <button type="submit">Rechercher</button>
+    </form>
+    
+    <!-- Bouton pour créer une nouvelle conversation -->
+    <a href="chemin/vers/nouvelle-conversation" class="btn">Nouvelle conversation</a>
+  </main>

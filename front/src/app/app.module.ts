@@ -17,6 +17,10 @@ import { FooterComponent } from './footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { JoinUsComponent } from './join-us/join-us.component';
+import { MesMessagesComponent } from './mes-messages/mes-messages.component';
 
 
 
@@ -34,6 +38,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ChatComponent,
     ProfilComponent,
     FooterComponent,
+    NavbarComponent,
+    HomepageComponent,
+    JoinUsComponent,
+    MesMessagesComponent,
   ],
   imports: [
     HttpClientModule,
