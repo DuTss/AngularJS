@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-  background-color: #fec868;
+  background-color: #ffa500;
   color: #473c33;
   text-transform: uppercase;
   padding: 10px;
@@ -63,15 +63,28 @@ h2 {
   color: red;
 }
 
-.annonces li {
-  background-color: #ffa500;
-  padding: 10px;
-  border-radius: 15px;
-  max-width: 230px;
+.anonnce-item {
+  background-color: #fec868;
+  padding: 15px;
+  border-radius: 20px;
+  max-width: 200px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
   /* ou toute autre valeur appropriée */
-  margin: 10px;
+  margin: 0 5px 30px 5px;
   /* pour donner de l'espace entre les annonces empilées */
+}
+
+.top-annonce {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.annonce-ajout {
+  margin: 0;
+  margin-left: 15px;
+  margin-top: 25px;
 }
 
 .annonces li:last-child {
@@ -116,11 +129,16 @@ h2 {
   align-items: center;
 }
 
+.image {
+  border: solid black 2px;
+  height: 150px;
+}
+
 .supprimer {
   background-color: #b50405;
   /* Couleur rouge */
   color: white;
-  padding: 4px 8px;
+  padding: 4px 6px;
   border: none;
   border-radius: 25px;
   /* Bords arrondis */
@@ -129,13 +147,14 @@ h2 {
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  margin-right: 10px;
 }
 
 .modifier {
   background-color: #4caf50;
   /* Couleur verte */
   color: white;
-  padding: 4px 8px;
+  padding: 4px 6px;
   border: none;
   border-radius: 25px;
   /* Bords arrondis */

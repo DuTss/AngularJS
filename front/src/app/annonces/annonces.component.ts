@@ -5,6 +5,7 @@ import { User } from '../models/user';
 import { AnnonceService } from '../services/annonce.service';
 import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from "@angular/router";
+import { Serializer } from '@angular/compiler';
 
 @Component({
   selector: 'app-annonces',
@@ -17,6 +18,7 @@ export class AnnoncesComponent implements OnInit {
   isFavorite: boolean | undefined;
   currentUser: any;
   isUser: boolean | undefined;
+  date: any;
 
   constructor(
     private annonceService: AnnonceService,
@@ -28,6 +30,11 @@ export class AnnoncesComponent implements OnInit {
   ngOnInit() {
     this.http.get<Annonce[]>('http://localhost:3001/post')
     .subscribe(annonces => this.annonces = annonces);
+
+    this.annonceService.getAnnonces().subscribe(() => {
+      console.log("ANNONCE ===> ", this.annonces);
+      const annonce_object = JSON.stringify(this.annonces)
+    })
   }
 
   toggleFavorite(annonceId: string) {

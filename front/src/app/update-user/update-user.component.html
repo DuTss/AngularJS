@@ -4,7 +4,16 @@
         <div class="form-group">
             <label for="profile-pic"><i class="fas fa-user-circle"></i> Photo de profil</label>
             <input type="file" class="form-control-file" id="profile-pic" name="profile-pic">
+        </div>
+        <div class="form-group">
+          <h3>Paramètres de paiement</h3>
+          <div class="detail-label">Moyen de paiement:
+            <label for="BTC">BTC</label>
+            <input type="checkbox" name="BTC" value="BTC">
+            <label for="shitcoin">Shitcoin</label>
+            <input type="checkbox" name="shitcoin" value="Shitcoin">
           </div>
+        </div>
       <div class="form-group">
         <label for="location"><i class="fas fa-map-marker-alt"></i> Lieu</label>
         <input type="text" class="form-control" id="location" [(ngModel)]="user.lieu" name="location" required>

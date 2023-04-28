@@ -1,33 +1,44 @@
 <h2>Liste des annonces</h2>
+<div class="container">
   <div class="annonces">
     <ul class="liste_annonce">
-      <li *ngFor="let annonce of annonces" class="annonce-item">
-        <img class="heart_fav" *ngIf="isFavorite" src="../../assets/icons/heart15.png" (click)="toggleFavorite(annonce._id)">
-        <img class="heart_fav" *ngIf="!isFavorite" src="../../assets/icons/heart222.png" (click)="toggleFavorite(annonce._id)">
-        <div class="annonce-header">
-          <a [routerLink]="['/une_annonce', annonce._id]" class="annonce-link">
-            <h3 class="annonce-titre">{{ annonce.titre }}</h3>
-          </a>
-        </div>
-        <!-- <p class="annonce-description">{{ annonce.description }}</p> -->
-        <div class="annonce-footer">
-          <div class="annonce_prix_satoshi">
-            <p  class="annonce_prix">     {{ annonce.prix }}</p>
-            <img src="../../assets/icons/Satoshi-symbol.png">
+      <li *ngFor="let annonce of annonces">
+        <div class="top-annonce">
+          <p class="annonce-ajout"><i>Ajoutée par : </i><b>{{ annonce.ajouter_par }}</b></p>
+          <div class="annonce-actions">
+            <a class="modifier"  *ngIf="!isUser" [routerLink]="['/modifier_annonce', annonce._id]"><i class="fa-regular fa-pen-to-square"></i></a>
+            <a class="supprimer" *ngIf="!isUser" (click)="deleteAnnonce(annonce._id)"><i class="fa-regular fa-trash-can"></i></a>
           </div>
-          <div class="annonce-details">
-            <p class="annonce-lieu">{{ annonce.lieu }}</p>
-            <div class="annonce-flag">
-              <p class="annonce-flag-text" *ngIf="annonce.flag">Annonce vérifiée</p>
-              <p class="annonce-flag-text" *ngIf="!annonce.flag">Annonce non vérifiée</p>
+        </div>
+
+        <div class="anonnce-item">
+          <div class="image">
+            <img class="heart_fav" *ngIf="isFavorite" src="../../assets/icons/heart15.png" (click)="toggleFavorite(annonce._id)">
+            <img class="heart_fav" *ngIf="!isFavorite" src="../../assets/icons/heart222.png" (click)="toggleFavorite(annonce._id)">
+          </div>
+          <div class="annonce-header">
+            <a [routerLink]="['/une_annonce', annonce._id]" class="annonce-link">
+              <h3 class="annonce-titre">{{ annonce.titre }}</h3>
+            </a>
+          </div>
+          <!-- <p class="annonce-description">{{ annonce.description }}</p> -->
+          <div class="annonce-footer">
+            <div class="annonce_prix_satoshi">
+              <p  class="annonce_prix">     {{ annonce.prix }}</p>
+              <img src="../../assets/icons/Satoshi-symbol.png">
             </div>
-            <p class="annonce-ajout"><i>Ajoutée par : </i><b>{{ annonce.ajouter_par }}</b></p>
+            <div class="annonce-details">
+              <p class="annonce-lieu">{{ annonce.lieu }}</p>
+              <div class="annonce-flag">
+                <p class="annonce-flag-text" *ngIf="annonce.flag">Annonce vérifiée</p>
+                <p class="annonce-flag-text" *ngIf="!annonce.flag">Annonce non vérifiée</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="annonce-actions">
-          <a class="modifier"  *ngIf="!isUser" [routerLink]="['/modifier_annonce', annonce._id]">Modifier</a>
-          <a class="supprimer" *ngIf="!isUser" (click)="deleteAnnonce(annonce._id)">Clotûrer l'annonce</a>
-        </div>
+
       </li>
     </ul>
 </div>
+</div>
+

@@ -66,3 +66,10 @@ h2 {
 .fa-save {
     margin-right: 10px;
 }
+
+
+.detail-label {
+    font-size: 16px;
+    color: #888;
+    width: 40%;
+}
