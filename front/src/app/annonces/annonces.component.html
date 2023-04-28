@@ -13,6 +13,7 @@
 
         <div class="anonnce-item">
           <div class="image">
+            <img [src]="sanitizer.bypassSecurityTrustUrl(annonce.image)" alt="">
             <img class="heart_fav" *ngIf="isFavorite" src="../../assets/icons/heart15.png" (click)="toggleFavorite(annonce._id)">
             <img class="heart_fav" *ngIf="!isFavorite" src="../../assets/icons/heart222.png" (click)="toggleFavorite(annonce._id)">
           </div>
@@ -28,7 +29,7 @@
               <img src="../../assets/icons/Satoshi-symbol.png">
             </div>
             <div class="annonce-details">
-              <p class="annonce-lieu">{{ annonce.lieu }}</p>
+              <p class="annonce-lieu">France, {{ annonce.lieu }}</p>
               <div class="annonce-flag">
                 <p class="annonce-flag-text" *ngIf="annonce.flag">Annonce vérifiée</p>
                 <p class="annonce-flag-text" *ngIf="!annonce.flag">Annonce non vérifiée</p>
@@ -36,7 +37,6 @@
             </div>
           </div>
         </div>
-
       </li>
     </ul>
 </div>

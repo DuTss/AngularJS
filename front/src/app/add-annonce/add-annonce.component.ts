@@ -4,6 +4,7 @@ import { AnnonceService } from '../services/annonce.service';
 import { Router } from '@angular/router';
 import { AuthService } from "../services/auth.service";
 import { FileSystemEntry,FileSystemDirectoryEntry } from 'ngx-file-drop';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-annonce',
@@ -19,7 +20,7 @@ export class AddAnnonceComponent {
     prix: 0,
     flag: false,
     ajouter_par: '',
-    // image:''
+    image: '',
   };
   currentUser: any;
 
@@ -27,12 +28,16 @@ export class AddAnnonceComponent {
   constructor(
     private annonceService: AnnonceService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private http: HttpClient,
   ) {}
 
   onImageSelect(event: any) {
-    console.log("EVENT TARGET ==>  ",event.target);
     const file = event.target.files[0];
+    console.log("FILEEE => ", file);
+    const formData = new FormData();
+    formData.append('image',file);
+    this.annonce.image = file;
   }
 
   ngOnInit() {
@@ -44,7 +49,16 @@ export class AddAnnonceComponent {
   }
 
   onSubmit() {
-    this.annonceService.addAnnonce(this.annonce).subscribe(() => {
+    const formData = new FormData();
+    formData.append('titre', this.annonce.titre);
+    formData.append('description', this.annonce.description);
+    formData.append('lieu', this.annonce.lieu);
+    formData.append('prix', this.annonce.prix.toString());
+    formData.append('ajouter_par', this.annonce.ajouter_par);
+    formData.append('image', this.annonce.image);
+  
+    this.annonceService.addAnnonce(formData).subscribe(() => {
+      console.log(this.annonce.image);
       // Rediriger vers la page /annonces
       this.router.navigateByUrl('/annonces');
     });

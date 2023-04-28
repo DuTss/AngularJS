@@ -1,4 +1,4 @@
-<form class="formulaire" (ngSubmit)="onSubmit()">
+<form class="formulaire" action="/post" (ngSubmit)="onSubmit()" enctype="multipart/form-data" method="POST">
     <div class="form-group">
       <label class="lab_titre" for="titre">Titre</label>
       <input type="text" class="form-control" id="titre" [(ngModel)]="annonce.titre" name="titre" required>
@@ -19,11 +19,11 @@
       <label class="lab_flag" for="flag">Flag</label>
       <input type="checkbox" class="form-control" id="flag" [(ngModel)]="annonce.flag" name="flag" required>
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
       <div class="drop-zone" >
-        <input type="file" class="form-control" id="file" name="file" (change)="onImageSelect($event)">
+        <input type="file" class="form-control" id="file" name="image" [(ngModel)]="annonce.image" (change)="onImageSelect($event)">
       </div>
-    </div> -->
+    </div>
     <div class="form-group by_user">
       <label class="lab_ajouter_par" for="ajouter_par">Ajouté par :</label>
       <input type="text" class="form-control" id="ajouter_par" [(ngModel)]="annonce.ajouter_par" name="ajouter_par" [value]=currentUser.user.pseudo  required readonly>

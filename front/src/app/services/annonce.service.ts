@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Annonce } from '../models/annonce';
 
@@ -20,15 +20,8 @@ export class AnnonceService {
     return this.http.get<Annonce>(url);
   }
 
-  addAnnonce(annonce: Annonce): Observable<Annonce> {
+  addAnnonce(annonce: FormData): Observable<Annonce> {
     return this.http.post<Annonce>(this.apiUrl, annonce);
-  }
-
-  uploadFile(file: File): Observable<any> {
-    const formData = new FormData();
-    formData.append('file', file);
-
-    return this.http.post<any>(`${this.apiUrl}/upload`, formData);
   }
 
   updateAnnonce(id: string, annonce: Annonce): Observable<any> {

@@ -5,7 +5,8 @@ import { User } from '../models/user';
 import { AnnonceService } from '../services/annonce.service';
 import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from "@angular/router";
-import { Serializer } from '@angular/compiler';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-annonces',
@@ -24,7 +25,9 @@ export class AnnoncesComponent implements OnInit {
     private annonceService: AnnonceService,
     private AuthService: AuthService,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public sanitizer: DomSanitizer
+
   ) {}
 
   ngOnInit() {
@@ -33,7 +36,8 @@ export class AnnoncesComponent implements OnInit {
 
     this.annonceService.getAnnonces().subscribe(() => {
       console.log("ANNONCE ===> ", this.annonces);
-      const annonce_object = JSON.stringify(this.annonces)
+      const annonce_object = this.annonces
+      console.log(annonce_object);
     })
   }
 
