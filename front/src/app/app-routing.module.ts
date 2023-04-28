@@ -13,13 +13,14 @@ import { MesMessagesComponent }             from './mes-messages/mes-messages.co
 import { ChatComponent }                    from './chat/chat.component';
 import { ProfilComponent }                  from './profil/profil.component';
 import { HomepageComponent }                from './homepage/homepage.component';
+import { UpdateUserComponent }              from './update-user/update-user.component';
 import { AuthGuard }                        from './auth.guard';
 import { AuthService }                      from './services/auth.service';
 import { ModalModule }                      from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
 
-  { path: 'homepage',                component: HomepageComponent                              },
+  { path: 'homepage',              component: HomepageComponent                                },
 
   //ANNONCES
   { path: 'annonces',              component: AnnoncesComponent,     canActivate: [AuthGuard]  },
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path: 'chat',                  component: ChatComponent         ,canActivate: [AuthGuard]  },
   { path: 'mes_messages',          component: MesMessagesComponent  ,canActivate: [AuthGuard]  },
   { path: 'profil',                component: ProfilComponent       ,canActivate: [AuthGuard]  },
+  { path: 'update_user',           component: UpdateUserComponent   ,canActivate: [AuthGuard]  },
+
 ];
 
 @NgModule({

@@ -1,0 +1,68 @@
+.container {
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.user-form {
+    margin-top: 30px;
+}
+
+.user-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.user-form input[type="text"],
+.user-form input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.user-form input[type="text"]:focus,
+.user-form input[type="file"]:focus {
+    outline: none;
+    border-color: #2684ff;
+}
+
+.user-form .form-group {
+    margin-bottom: 20px;
+}
+
+.user-form .invalid-feedback {
+    color: #dc3545;
+    margin-top: 5px;
+    display: none;
+}
+
+.user-form .success-feedback {
+    color: #28a745;
+    margin-top: 20px;
+    display: none;
+}
+
+.user-form button[type="submit"] {
+    background-color: #2684ff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-form button[type="submit"]:hover {
+    background-color: #1f6ad4;
+}
+
+.fa-user-circle,
+.fa-map-marker-alt,
+.fa-save {
+    margin-right: 10px;
+}

@@ -98,7 +98,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
     });
-    return this.http.get<any>(`${this.apiUrl}/users/${id}`, { headers: headers })
+    return this.http.get<any>(`${this.apiUrl}user/${id}`, { headers: headers })
       .pipe(
         catchError((error) => {
           return throwError(error);

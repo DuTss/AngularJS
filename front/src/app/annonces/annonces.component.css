@@ -37,17 +37,10 @@ h2 {
 }
 
 /* ============================ ANNONCES ============================ */
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .annonces {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px;
   overflow: hidden;
 }
 
@@ -55,13 +48,14 @@ h2 {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .liste_annonce {
   display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -71,9 +65,10 @@ h2 {
 
 .annonces li {
   background-color: #ffa500;
-  padding: 15px;
+  padding: 10px;
   border-radius: 15px;
-  max-width: 210px;
+  max-width: 230px;
+
   /* ou toute autre valeur appropriée */
   margin: 10px;
   /* pour donner de l'espace entre les annonces empilées */

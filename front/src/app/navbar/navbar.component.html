@@ -21,7 +21,6 @@
     <div class="navbar-buttons">
       <a *ngIf="!isAuthenticated()" routerLink="/login" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i>Connexion</a>
       <a *ngIf="isAuthenticated()"  routerLink="/profil" class="btn btn-primary"><i class="fa-regular fa-user"></i>Mon profil</a>
-      <a *ngIf="isAuthenticated()" class="btn btn-primary" (click)="onSubmit()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Se déconnecter</a>
       <a *ngIf="!isAuthenticated()" routerLink="/signup" class="btn btn-secondary"><i class="fa-solid fa-user-plus"></i>Inscription</a>
       <div class="mode-switch">
         <input type="checkbox" id="mode-switch" class="mode-switch-checkbox" [(ngModel)]="isDarkMode" />

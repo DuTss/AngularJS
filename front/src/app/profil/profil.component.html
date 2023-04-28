@@ -1,11 +1,14 @@
-<div class="profile-container">
+<div class="container">
     <div class="profile-header">
       <div class="profile-picture">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Profile Picture">
       </div>
       <div class="profile-info">
-        <h2>PSEUDO</h2>
-        <button class="btn btn-primary">Modifier le profil</button>
+        <h2>{{user.pseudo}}</h2>
+        <div class="buttons">
+          <a class="btn btn-primary" routerLink="/update_user">Modifier votre profil</a>
+          <a class="btn btn-secondary" routerLink="/update_user">Supprimez votre profil</a>
+        </div>
       </div>
     </div>
     <div class="profile-details">
@@ -13,11 +16,11 @@
         <h3>Informations personnelles</h3>
         <div class="detail-row">
           <div class="detail-label">Pseudo:</div>
-          <div class="detail-value">PSEUDO</div>
+          <div class="detail-value">{{user.pseudo}}</div>
         </div>
         <div class="detail-row">
           <div class="detail-label">Lieu:</div>
-          <div class="detail-value">LIEU</div>
+          <div class="detail-value">{{user.lieu}}</div>
         </div>
       </div>
       <div class="detail">
@@ -30,7 +33,8 @@
           <div class="detail-label">Adresse de paiement Bitcoin:</div>
           <div class="detail-value">LOL</div>
         </div>
+        <a *ngIf="isAuthenticated()" class="btn btn_logout" (click)="onSubmit()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Se déconnecter</a>
+
       </div>
     </div>
   </div>
-  

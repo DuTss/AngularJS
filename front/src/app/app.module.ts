@@ -21,6 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { JoinUsComponent } from './join-us/join-us.component';
 import { MesMessagesComponent } from './mes-messages/mes-messages.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 
@@ -42,6 +43,7 @@ import { MesMessagesComponent } from './mes-messages/mes-messages.component';
     HomepageComponent,
     JoinUsComponent,
     MesMessagesComponent,
+    UpdateUserComponent,
   ],
   imports: [
     HttpClientModule,

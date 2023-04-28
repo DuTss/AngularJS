@@ -1,4 +1,11 @@
 /* Styles pour la page "Mes messages" */
+.container {
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 /* Titre */
 h1 {

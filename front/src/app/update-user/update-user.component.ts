@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { AuthService } from "../services/auth.service";
+import { AuthService } from '../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
 
 @Component({
-  selector: 'app-profil',
-  templateUrl: './profil.component.html',
-  styleUrls: ['./profil.component.css']
+  selector: 'app-update-user',
+  templateUrl: './update-user.component.html',
+  styleUrls: ['./update-user.component.css']
 })
-export class ProfilComponent {
+export class UpdateUserComponent {
   currentUser: any;
   user: User= {} as User;
 
@@ -26,15 +26,5 @@ export class ProfilComponent {
     this.AuthService.getUserById(userId).subscribe((user: User) => {
       this.user = user
     })
-  }
-
-  isAuthenticated(): boolean {
-    return this.AuthService.getToken() !== null;
-  }
-
-  onSubmit() {
-    this.AuthService.logout();
-    this.router.navigate(['/login']);
-    console.log(localStorage.getItem('token'));
   }
 }
