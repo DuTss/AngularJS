@@ -3,7 +3,8 @@
       <div class="hero-text">
         <h1>Echangez vos Bitcoin en toute sécurité</h1>
         <p>BitLister est la première plateforme d'échange en ligne où vous pouvez rencontrer d'autres personnes pour échanger vos Bitcoin. Profitez de la sécurité d'un réseau décentralisé et résilient pour échanger vos fonds en toute confiance.</p>
-        <a routerLink="/signup" class="cta-button">Créer votre compte</a>
+        <a *ngIf="isAuthenticated()"  routerLink="/annonces"class="cta-button"><i class="fa-solid fa-bullhorn"></i>  Voir les annonces</a>
+        <a *ngIf="!isAuthenticated()" routerLink="/signup" class="cta-button"><i class="fa-solid fa-user-plus"></i>  Créer votre compte</a>
       </div>
     </section>
 
@@ -21,6 +22,7 @@
           <li>Rencontrez-vous pour échanger vos fonds en toute sécurité.</li>
           <li>Vous pouvez ensuite les utiliser pour acheter d'autres biens et services sur BitLister.</li>
         </ol>
-        <a routerLink="/signup" class="cta-button">Créer un compte</a>
+        <a *ngIf="isAuthenticated()"  routerLink="/annonces"class="cta-button"><i class="fa-solid fa-bullhorn"></i>  Voir les annonces</a>
+        <a *ngIf="!isAuthenticated()" routerLink="/signup" class="cta-button"><i class="fa-solid fa-user-plus"></i>  Créer votre compte</a>
       </section>
 </main>

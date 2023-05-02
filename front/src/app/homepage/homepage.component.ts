@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {
 
+  constructor (private AuthService: AuthService) {}
+  isAuthenticated(): boolean {
+    return this.AuthService.getToken() !== null;
+  }
 }
