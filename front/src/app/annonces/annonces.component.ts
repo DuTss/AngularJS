@@ -5,8 +5,7 @@ import { User } from '../models/user';
 import { AnnonceService } from '../services/annonce.service';
 import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from "@angular/router";
-import { DomSanitizer } from '@angular/platform-browser';
-
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-annonces',
@@ -29,16 +28,15 @@ export class AnnoncesComponent implements OnInit {
     public sanitizer: DomSanitizer
 
   ) {}
-
   ngOnInit() {
     this.http.get<Annonce[]>('http://localhost:3001/post')
-    .subscribe(annonces => this.annonces = annonces);
-
-    this.annonceService.getAnnonces().subscribe(() => {
-      console.log("ANNONCE ===> ", this.annonces);
-      const annonce_object = this.annonces
-      console.log(annonce_object);
-    })
+      .subscribe(annonces => {
+        if(annonces) {
+          this.annonces = annonces;
+        }
+      }, error => {
+        console.error('An error occurred:', error);
+      });
   }
 
   toggleFavorite(annonceId: string) {

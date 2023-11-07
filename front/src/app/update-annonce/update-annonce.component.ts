@@ -3,6 +3,7 @@ import { Annonce } from '../models/annonce';
 import { HttpClient } from '@angular/common/http';
 import { AnnonceService } from '../services/annonce.service';
 import { ActivatedRoute, Router, RouterEvent, Routes } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-update-annonce',
@@ -16,6 +17,8 @@ export class UpdateAnnonceComponent {
       private annonceService: AnnonceService,
       private route: ActivatedRoute,
       private http: HttpClient,
+      private router: Router,
+      public sanitizer: DomSanitizer
     ) {}
 
     ngOnInit() {
@@ -32,13 +35,9 @@ export class UpdateAnnonceComponent {
     onSubmit() {
       if (this.annonce != null) {
         this.http.put(`http://localhost:3001/post/${this.annonce._id}`, this.annonce)
-          .subscribe(
-            res => {
-              console.log(res);
-              window.location.href = 'http://localhost:4201/annonces';
-            },
-            err => console.log(err)
-          );
+          .subscribe( () => {
+            this.router.navigateByUrl('/annonces');
+          });
       }
     }
 }

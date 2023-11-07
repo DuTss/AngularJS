@@ -2,21 +2,23 @@
 <div class="container">
   <div class="annonces">
     <ul class="liste_annonce">
-      <li *ngFor="let annonce of annonces">
-        <div class="top-annonce">
+      <li *ngFor="let annonce of annonces" class="annonce">
+        <!-- <div class="top-annonce">
           <p class="annonce-ajout"><i>Ajoutée par : </i><b>{{ annonce.ajouter_par }}</b></p>
-          <div class="annonce-actions">
-            <a class="modifier"  *ngIf="!isUser" [routerLink]="['/modifier_annonce', annonce._id]"><i class="fa-regular fa-pen-to-square"></i></a>
-            <a class="supprimer" *ngIf="!isUser" (click)="deleteAnnonce(annonce._id)"><i class="fa-regular fa-trash-can"></i></a>
-          </div>
-        </div>
-
+        </div> -->
         <div class="anonnce-item">
-          <div class="image">
-            <img [src]="sanitizer.bypassSecurityTrustUrl(annonce.image)" alt="">
+          <div class="annonce-actions">
             <img class="heart_fav" *ngIf="isFavorite" src="../../assets/icons/heart15.png" (click)="toggleFavorite(annonce._id)">
             <img class="heart_fav" *ngIf="!isFavorite" src="../../assets/icons/heart222.png" (click)="toggleFavorite(annonce._id)">
+            <div class="delete_update">
+              <a class="modifier"  *ngIf="!isUser" [routerLink]="['/modifier_annonce', annonce._id]"><i class="fa-regular fa-pen-to-square"></i></a>
+              <a class="supprimer" *ngIf="!isUser" (click)="deleteAnnonce(annonce._id)"><i class="fa-regular fa-trash-can"></i></a>
+            </div>
           </div>
+          <div class="image">
+            <img [src]="sanitizer.bypassSecurityTrustUrl(annonce.image)" alt="">
+          </div>
+
           <div class="annonce-header">
             <a [routerLink]="['/une_annonce', annonce._id]" class="annonce-link">
               <h3 class="annonce-titre">{{ annonce.titre }}</h3>

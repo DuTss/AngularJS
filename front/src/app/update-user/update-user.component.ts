@@ -27,4 +27,17 @@ export class UpdateUserComponent {
       this.user = user
     })
   }
+
+  onSubmit() {
+    if (this.user != null) {
+      this.http.put(`http://localhost:3001/post/${this.user._id}`, this.user)
+        .subscribe(
+          res => {
+            console.log(res);
+            window.location.href = 'http://localhost:4201/users';
+          },
+          err => console.log(err)
+        );
+    }
+  }
 }

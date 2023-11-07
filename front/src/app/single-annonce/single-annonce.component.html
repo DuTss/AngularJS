@@ -3,6 +3,9 @@
     <ul class="liste_annonce">
       <li *ngIf="annonces">
         <h3 class="annonce_titre"><a>{{ annonces.titre }}</a></h3>
+        <div class="image-annonce">
+          <img [src]="sanitizer.bypassSecurityTrustUrl(annonces.image)" alt="">
+        </div>
         <p  class="annonce_description">{{ annonces.description }}</p>
         <div class="annonce_prix_satoshi">
           <p  class="annonce_prix">     {{ annonces.prix }}</p>

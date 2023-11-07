@@ -55,13 +55,18 @@ h2 {
 .annonces li,
 .annonce_profil li {
   border: 2px solid #ddd;
-  background-color: #000000;
+  background-color: #fec868;
   padding: 15px;
   border-radius: 15px;
   max-width: 400px;
   /* ou toute autre valeur appropriée */
   margin: 10px;
   /* pour donner de l'espace entre les annonces empilées */
+}
+
+.image-annonce img {
+  width: 200px;
+  height: 200px;
 }
 
 .annonce_profil ul li {

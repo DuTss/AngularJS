@@ -31,6 +31,18 @@ h2 {
   font-weight: bold;
 }
 
+/* ============================ CONTAINER ============================ */
+
+.container {
+  max-width: 750px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================ ANNONCE TITRE ============================ */
+
+
 .annonce-titre {
   color: #993800;
   margin: 0;
@@ -42,18 +54,11 @@ h2 {
   color: black;
 }
 
-/* ============================ ANNONCES ============================ */
+/* ============================ ANNONCES LIST ============================ */
 .annonces {
   background-color: #fff;
-  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-}
-
-.annonces ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .liste_annonce {
@@ -62,35 +67,57 @@ h2 {
   align-content: center;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
 }
 
 .heart-icon.filled {
   color: red;
 }
 
+.annonce-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
 .anonnce-item {
   background-color: #fec868;
-  padding: 15px;
+  padding: 5px 15px 20px 20px;
   border-radius: 20px;
-  max-width: 200px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-
-  /* ou toute autre valeur appropriée */
-  margin: 0 5px 30px 5px;
-  /* pour donner de l'espace entre les annonces empilées */
+  margin: 0 5px 5px 5px;
+  width: 210px;
+  height: 230px;
 }
 
 .top-annonce {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-right: 5px;
+}
+
+.supprimer {
+  margin-left: 5px;
 }
 
 .annonce-ajout {
   margin: 0;
   margin-left: 15px;
-  margin-top: 25px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.modifier,
+.supprimer {
+  /* color: #ffa500; */
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.supprimer:hover {
+  text-decoration: line-through;
 }
 
 .annonces li:last-child {
@@ -114,6 +141,17 @@ h2 {
   color: red;
 }
 
+.image {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.image img {
+  margin-top: 10px;
+  width: 100px;
+  height: 75px;
+}
+
 .annonce_description,
 .annonce_lieu {
   font: Helvetica, arial;
@@ -135,68 +173,9 @@ h2 {
   align-items: center;
 }
 
-.image {
-  border: solid black 2px;
-  height: 150px;
-}
-
-.supprimer {
-  background-color: #b50405;
-  /* Couleur rouge */
-  color: white;
-  padding: 4px 6px;
-  border: none;
-  border-radius: 25px;
-  /* Bords arrondis */
-  box-shadow: 0 5px #df0101;
-  /* Relief */
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin-right: 10px;
-}
-
-.modifier {
-  background-color: #4caf50;
-  /* Couleur verte */
-  color: white;
-  padding: 4px 6px;
-  border: none;
-  border-radius: 25px;
-  /* Bords arrondis */
-  box-shadow: 0 5px #2e8b57;
-  /* Relief */
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  /* Animation de transition */
-  margin-right: 5px;
-}
-
-.modifier:hover {
-  background-color: #3e8e41;
-  /* Couleur verte foncée au survol */
-  box-shadow: 0 5px #2e8b57;
-}
-
-.supprimer:hover {
-  background-color: #d62d20;
-  /* Couleur rouge foncée au survol */
-  box-shadow: 0 5px #df0101;
-}
-
-.modifier:active {
-  background-color: #2e6f34;
-  /* Couleur verte foncée au clic */
-  box-shadow: 0 2px #2e8b57;
-  transform: translateY(3px);
-  /* Effet de pression */
-}
-
+.modifier:active,
 .supprimer:active {
-  background-color: #df0101;
-  /* Couleur rouge foncée au clic */
-  box-shadow: 0 2px #df0101;
+  box-shadow: 0 2px #000000;
   transform: translateY(3px);
   /* Effet de pression */
 }
@@ -212,23 +191,18 @@ h2 {
   color: #7d7d7d;
 }
 
-.annonce-actions {
-  padding-bottom: 10px;
-}
+/* COEUR */
 
 .heart_fav {
-  width: 5%;
+  width: 10%;
+}
+
+.heart_fav:hover {
+  transition: 50ms;
+  width: 11%;
 }
 
 /* ==================================================================================== */
-
-.form {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  padding: 20px;
-}
 
 @media screen and (max-width: 1024px) {
   .annonce {

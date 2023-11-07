@@ -5,6 +5,7 @@ import { Commentaire } from '../models/commentaire';
 import { AnnonceService } from '../services/annonce.service';
 import { CommentaireService } from '../services/commentaire.service';
 import { ActivatedRoute,Router } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -33,6 +34,7 @@ export class SingleAnnonceComponent {
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router,
+    public sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(){
