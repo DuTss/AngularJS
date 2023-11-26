@@ -19,6 +19,7 @@ export class AnnoncesComponent implements OnInit {
   currentUser: any;
   isUser: boolean | undefined;
   date: any;
+  imageUrl: '' | undefined;
 
   constructor(
     private annonceService: AnnonceService,
@@ -33,6 +34,7 @@ export class AnnoncesComponent implements OnInit {
       .subscribe(annonces => {
         if(annonces) {
           this.annonces = annonces;
+          console.log(this.annonces);
         }
       }, error => {
         console.error('An error occurred:', error);
@@ -70,4 +72,15 @@ export class AnnoncesComponent implements OnInit {
         location.reload()
       });
   }
+
+  // Your component code
+  isArray(value: any): boolean {
+    return Array.isArray(value);
+  }
+
+  getImageUrl(filename: string): string {
+    // Replace 'http://localhost:3000' with the actual URL of your server
+    return `http://localhost:3000/uploads/${filename}`;
+  }
+
 }

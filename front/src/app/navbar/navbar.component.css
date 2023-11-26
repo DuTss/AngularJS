@@ -7,10 +7,24 @@
 
 /*==================== LOGO ====================*/
 
+.logo-text {
+    margin-left: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    margin-right: 50px;
+}
+
 .logo {
-    width: 50px;
-    height: 41px;
-    margin: 10px 10px 1px 0px;
+    display: flex;
+    align-items: center;
+
+}
+
+a {
+    text-decoration: none;
 }
 
 /*==================== NAVBAR ====================*/
@@ -20,6 +34,8 @@
     align-items: center;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    margin-top: 7px;
 }
 
 .navbar-links {
@@ -45,11 +61,12 @@
     color: #333;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 
 .navbar-link i {
-    font-size: 22px;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .navbar-link a:hover,
@@ -71,7 +88,7 @@
     align-items: center;
     justify-content: center;
     height: 40px;
-    border-radius: 32px;
+    border-radius: 20px;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -84,7 +101,7 @@
     background-color: #f7931a;
     color: #fff;
     border: none;
-    padding: 15px !important;
+    padding: 32px !important;
     margin-right: 10px;
     height: 50px;
 }
@@ -146,7 +163,6 @@
     width: 16px;
     height: 16px;
 }
-
 
 /*==================== TOGGLE DARKMODE SOLEIL/LUNE ====================*/
 

@@ -1,5 +1,5 @@
-<h2>Liste des annonces</h2>
 <div class="container">
+  <h2>Liste des annonces</h2>
   <div class="annonces">
     <ul class="liste_annonce">
       <li *ngFor="let annonce of annonces" class="annonce">
@@ -15,9 +15,12 @@
               <a class="supprimer" *ngIf="!isUser" (click)="deleteAnnonce(annonce._id)"><i class="fa-regular fa-trash-can"></i></a>
             </div>
           </div>
-          <div class="image">
+          <!-- <div class="image">
             <img [src]="sanitizer.bypassSecurityTrustUrl(annonce.image)" alt="">
-          </div>
+          </div> -->
+            <div class="image" *ngIf="isArray(annonce.image) && annonce.image.length > 0">
+              <img [src]="sanitizer.bypassSecurityTrustUrl(annonce.image[0])" alt="">
+            </div>
 
           <div class="annonce-header">
             <a [routerLink]="['/une_annonce', annonce._id]" class="annonce-link">
@@ -32,10 +35,10 @@
             </div>
             <div class="annonce-details">
               <p class="annonce-lieu">France, {{ annonce.lieu }}</p>
-              <div class="annonce-flag">
+              <!-- <div class="annonce-flag">
                 <p class="annonce-flag-text" *ngIf="annonce.flag">Annonce vérifiée</p>
                 <p class="annonce-flag-text" *ngIf="!annonce.flag">Annonce non vérifiée</p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

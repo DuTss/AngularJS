@@ -14,8 +14,9 @@
 /* Titre */
 .lab_titre {
   display: block;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
+  font: Roboto;
   margin-bottom: 10px;
   color: #473c33;
 }
@@ -58,21 +59,27 @@
 
 /* Champs de formulaire */
 .form-control {
-  display: block;
-  width: 100%;
+  width: 97%;
+  max-width: 97%;
+  min-width: 97%;
+  height: 35px;
+  max-height: 150px;
+  min-height: 35px;
   padding: 10px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 20px;
   font-family: Arial, sans-serif;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 25px;
   transition: border-color 0.2s ease-in-out;
   color: #473c33;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #fec868;
+  border-color: #ffb637;
+  border: 3px solid #ffb637;
+  cursor: 10px;
 }
 
 /* Bouton d'ajout */
@@ -84,17 +91,79 @@
   font-weight: bold;
   font-family: Arial, sans-serif;
   border: none;
-  border-radius: 5px;
-  background-color: #fec868;
+  border-radius: 25px;
+  background-color: #ffa915;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
 
 .btn-primary:hover {
-  background-color: #fda769;
+  background-color: #ff8025;
 }
 
 .by_user {
   display: none;
 }
+
+/* Style de la zone de dépôt (drop zone) */
+.drop-zone {
+  position: relative;
+  width: 25%;
+  height: 120px;
+  /* Ajustez la hauteur selon vos besoins */
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  margin: 5px;
+}
+
+.drop-zone input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Style pour indiquer le survol de la zone de dépôt */
+.drop-zone:hover {
+  border: 2px dashed #3599eb;
+}
+
+/* Style du texte à l'intérieur de la zone de dépôt */
+.drop-zone p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.uploadImages {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.iconImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+i {
+  font-size: 35px;
+  margin-bottom: 15px;
+  color: #3599eb;
+}
+
+i:hover {
+  color: rgb(139, 139, 212);
+}
+
+/* Ajoutez des styles supplémentaires selon les besoins */

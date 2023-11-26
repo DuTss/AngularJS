@@ -21,7 +21,8 @@ export class AnnonceService {
   }
 
   addAnnonce(annonce: FormData): Observable<Annonce> {
-    return this.http.post<Annonce>(this.apiUrl, annonce);
+    return this.http.post<Annonce>(this.apiUrl, annonce, {
+    });
   }
 
   updateAnnonce(id: string, annonce: Annonce): Observable<any> {
