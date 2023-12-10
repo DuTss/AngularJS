@@ -20,10 +20,12 @@ export class FooterComponent {
 
   openPopup(): void {
     const dialogRef = this.dialog.open(PopupBtcComponent, {
-      width: '250px', // Largeur de la fenêtre modale
+      width: '500px', // Largeur de la fenêtre modale
       height: 'auto', // Hauteur de la fenêtre modale
+      position: { top: '-45%', left: '50%' }, // Position de la fenêtre modale
+      disableClose: false, // Empeche la fermeture de la fenêtre modale
       panelClass: 'my-dialog', // Ajoutez une classe CSS personnalisée pour votre fenêtre modale
-      data: { name: 'Nom de l\'utilisateur' }
+      data: { name: 'Nom de l\'utilisateur' }, // Donnez des données au composant
     });
 
     dialogRef.afterClosed().subscribe(result => {

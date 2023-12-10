@@ -1,8 +1,14 @@
-<h2 mat-dialog-title class="my-custom-title">Popup</h2>
-<div class="my-custom-content">
-  <p>Contenu de la popup</p>
-</div>
-<div class="my-custom-actions">
-  <button  class="my-custom-button">Annuler</button>
-  <button  class="my-custom-button">OK</button>
+<div class="container-global">
+  <div class="my-custom-actions">
+    <button class="close" aria-label="Close" (click)="closePopUp()">X</button>
+  </div>
+  <div class="container-popup">
+    <div class="popup">
+      <!-- <h2 mat-dialog-title class="my-custom-title">Dons</h2> -->
+      <img src="../../assets/icons/frame.png" alt="">
+      <div class="my-custom-content">
+        <!-- <p>Contenu de la popup</p> -->
+      </div>
+    </div>
+  </div>
 </div>

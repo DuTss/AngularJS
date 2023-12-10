@@ -100,3 +100,7 @@
   width: 24px;
   height: 24px;
 }
+
+.my-dialog-backdrop {
+  background-color: #e68316;
+}

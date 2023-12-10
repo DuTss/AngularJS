@@ -1,3 +1,7 @@
+body {
+  background-color: #f2f2f2;
+}
+
 /* Formulaire */
 .formulaire {
   width: 100%;
@@ -109,7 +113,6 @@
 /* Style de la zone de dépôt (drop zone) */
 .drop-zone {
   position: relative;
-  width: 25%;
   height: 120px;
   /* Ajustez la hauteur selon vos besoins */
   border: 2px dashed #ccc;

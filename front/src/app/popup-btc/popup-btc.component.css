@@ -1,3 +1,16 @@
+div .container-global {
+  border-radius: 25px;
+}
+
+.container-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+}
+
 .my-custom-title {
   font-size: 24px;
   font-weight: bold;
@@ -15,10 +28,22 @@
   justify-content: flex-end;
 }
 
-.my-custom-button {
-  margin-left: 10px;
-  background-color: #007bff;
+img {
+  margin-top: 20px;
+}
+
+.close {
+  background-color: #ff9831;
   color: #fff;
-  border-radius: 4px;
-  padding: 8px 16px;
+  border-radius: 25px;
+  padding: 4px 8px;
+  font-weight: bolder;
+  border: 0px;
+  margin: 10px;
+  box-shadow: rgb(62, 62, 62) 0px 0px 5px;
+}
+
+.close:hover {
+  background-color: #ff7f00;
+  color: #fff;
 }

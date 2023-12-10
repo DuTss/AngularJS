@@ -1,6 +1,17 @@
 /* CSS pour la page d'accueil BitLister */
 
 /* Styles pour le texte d'en-tête */
+section {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 #hero {
     background-color: #F2F2F2;
     text-align: center;

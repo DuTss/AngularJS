@@ -26,12 +26,15 @@ h2 {
   font-weight: bold;
   color: #333;
   text-align: center;
-  border: #ffa500 2px solid;
-  background-color: #f0f0f0;
+  border: #eaeaea 2px solid;
+  background-color: #ffffff;
   border-radius: 8px;
-  width: 100vh;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+  max-width: 150vh;
+  width: 140vh;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 /* ============================ ANNONCE TITRE ============================ */
@@ -59,9 +62,9 @@ h2 {
 /* ============================ ANNONCES LIST ============================ */
 .annonces {
   background-color: #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 20px;
 }
 

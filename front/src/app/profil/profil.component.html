@@ -1,14 +1,13 @@
-<div class="container">
+<div class="container-profil">
     <div class="profile-header">
-      <div class="profile-picture">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Profile Picture">
-      </div>
+      <a routerLink="/image_profil">
+        <div class="profile-picture">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Profile Picture">
+          <a class="btn-image">+</a>
+        </div>
+      </a>
       <div class="profile-info">
         <h2>{{user.pseudo}}</h2>
-        <div class="buttons">
-          <a class="btn btn-primary" routerLink="/update_user">Modifier votre profil</a>
-          <a class="btn btn-secondary" routerLink="/update_user">Supprimez votre profil</a>
-        </div>
       </div>
     </div>
     <div class="profile-details">
@@ -23,8 +22,32 @@
           <div class="detail-value">{{user.lieu}}</div>
         </div>
       </div>
-      <div class="detail">
-        <a *ngIf="isAuthenticated()" class="btn btn_logout" (click)="onSubmit()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Se déconnecter</a>
-      </div>
     </div>
+  </div>
+  <div class="container-footer">
+    <a routerLink="/annonces">
+    <div class="btn-container">
+      <button class="btn-gestion-annonce">
+          <i class="fa-solid fa-bullhorn"></i>
+          <h3>Annonces</h3>
+          <p>Gérer toutes vos annonces</p>
+    </button>
+    </div>
+  </a>
+    <a routerLink="/update_user">
+    <div class="btn-container">
+      <button class="btn-gestion-annonce">
+          <i class="fa-solid fa-bullhorn"></i>
+          <h3>Modification du profil</h3>
+          <p>Consultez vos avis et modifiez votre profil</p>
+    </button>
+    </div>
+    </a>
+  </div>
+  <div class="container-footer">
+    <div class="detail">
+      <a *ngIf="isAuthenticated()" class="btn btn_logout" (click)="onSubmit()"><i class="fa-solid fa-arrow-right-from-bracket"></i>Se déconnecter</a>
+      <a class="btn btn-secondary" routerLink="/update_user"><i class="fa-regular fa-trash-can"></i>Supprimez votre profil</a>
+    </div>
+
   </div>
