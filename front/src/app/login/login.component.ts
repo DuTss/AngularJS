@@ -14,6 +14,7 @@ import { first } from 'rxjs/operators';
 export class LoginComponent {
   pseudo: string = "";
   mdp: string = "";
+  AuthTokens: { AuthToken: string }[] = [];
   errorMsg = '';
   constructor(
     private http: HttpClient,
@@ -26,6 +27,7 @@ export class LoginComponent {
   ngOnInit() {
 
   }
+  
 
   onSubmit() {
     this.authService.login(this.pseudo, this.mdp)

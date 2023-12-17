@@ -14,7 +14,8 @@ export class SignupComponent {
     pseudo: '',
     lieu: '',
     mdp: '',
-    favoris:[]
+    favoris:[],
+    AuthTokens: [{AuthToken : ''}]
   };
   errorMsg = '';
 

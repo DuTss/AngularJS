@@ -89,7 +89,7 @@ h2 {
 }
 
 .anonnce-item {
-  background-color: #fec868;
+  background-color: #ffcd8f;
   padding: 5px 15px 20px 20px;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -120,7 +120,7 @@ h2 {
 .modifier,
 .supprimer {
   /* color: #ffa500; */
-  color: #ffffff;
+  color: #585858;
   font-size: 18px;
   cursor: pointer;
 }
@@ -153,6 +153,11 @@ h2 {
 .image {
   flex: 1;
   margin-right: 15px;
+}
+
+.container-image {
+  border: #000000 1px solid;
+  height: 120px;
 }
 
 .image img {
@@ -203,12 +208,14 @@ h2 {
 /* COEUR */
 
 .heart_fav {
-  width: 10%;
+  width: 9%;
+  height: 10%;
 }
 
 .heart_fav:hover {
   transition: 50ms;
-  width: 11%;
+  width: 10%;
+  height: 11%;
 }
 
 /* ==================================================================================== */

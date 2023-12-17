@@ -16,6 +16,5 @@ export class PopupBtcComponent {
 
   closePopUp(): void {
     this.dialog.closeAll();
-    console.log("closePopUp");
   }
 }

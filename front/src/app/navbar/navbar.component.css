@@ -8,7 +8,6 @@
 /*==================== LOGO ====================*/
 
 .logo-text {
-    margin-left: 10px;
     font-size: 28px;
     font-weight: bold;
     color: #333;
@@ -20,7 +19,6 @@
 .logo {
     display: flex;
     align-items: center;
-
 }
 
 a {
@@ -34,8 +32,7 @@ a {
     align-items: center;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 70px;
-    margin-top: 7px;
+    height: 75px;
 }
 
 .navbar-links {
@@ -48,30 +45,35 @@ a {
 }
 
 .navbar-link a,
-.navbar-buttons a {
+.navbar-buttons a,
+.navbar-active a {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-content: center;
     justify-content: center;
     align-items: center;
-    padding: 5px;
     font-size: 18px;
     font-weight: bold;
     color: #333;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
-    margin-right: 15px;
+    margin: 10px;
 }
 
-.navbar-link i {
-    font-size: 30px;
-    margin-bottom: 10px;
+.navbar-link i,
+.navbar-active i {
+    font-size: 26px;
+    margin-bottom: 3px;
 }
 
 .navbar-link a:hover,
 .navbar-link i:hover {
     color: #007bff;
+}
+
+.navbar-active a:hover,
+.navbar-active i:hover {
+    color: #ffffff;
 }
 
 
@@ -83,50 +85,15 @@ a {
 /*==================== BOUTONS ====================*/
 
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary {
+.active {
     background-color: #f7931a;
+    border-radius: 15px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.2);
     color: #fff;
-    border: none;
-    padding: 32px !important;
-    margin-right: 10px;
-    height: 50px;
-}
-
-.btn-primary:hover {
-    background-color: #ff6000;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: #2f1200;
-    color: #fff;
-    border: none;
-    margin-right: 20px;
-    cursor: pointer !important;
-}
-
-.btn-secondary:hover {
-    background-color: #37312d;
-    transform: translateY(-2px);
-    cursor: pointer !important;
-}
-
-.fa-user {
-    font-size: 22px;
+    transition: all 0.2s ease-in-out;
 }
 
 /*==================== BOUTON DONATE ====================*/
@@ -168,10 +135,11 @@ a {
 
 .mode-switch {
     position: relative;
-    width: 52px;
-    height: 28px;
+    width: 72px;
+    height: 38px;
     border: 1.5px solid orange;
     border-radius: 20px;
+    margin-left: 25px;
 }
 
 .mode-switch-checkbox {
@@ -198,21 +166,21 @@ a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background-repeat: no-repeat;
     background-size: contain;
     transition: all 0.3s ease-in-out;
 }
 
 .mode-switch-icon.sun {
-    left: 2px;
+    left: 5px;
     background-image: url("src/assets/icons/sun81.png");
     z-index: 9999;
 }
 
 .mode-switch-icon.moon {
-    right: 1.5px;
+    right: 3px;
     background-image: url("src/assets/icons/moon25.png");
     z-index: 9999;
 }
@@ -222,15 +190,15 @@ a {
 }
 
 .mode-switch-checkbox:checked~.mode-switch-label .mode-switch-bg {
-    transform: translateX(25px);
+    transform: translateX(36px);
 }
 
 .mode-switch-bg {
     position: absolute;
     top: 8%;
     left: 53%;
-    width: 23px;
-    height: 23px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
@@ -238,5 +206,5 @@ a {
 }
 
 .mode-switch-checkbox:checked~.mode-switch-bg {
-    transform: translateX(-26px);
+    transform: translateX(-36px);
 }

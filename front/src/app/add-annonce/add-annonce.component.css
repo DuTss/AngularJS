@@ -113,7 +113,7 @@ body {
 /* Style de la zone de dépôt (drop zone) */
 .drop-zone {
   position: relative;
-  height: 120px;
+  height: 80px;
   /* Ajustez la hauteur selon vos besoins */
   border: 2px dashed #ccc;
   border-radius: 8px;
@@ -124,6 +124,7 @@ body {
   cursor: pointer;
   transition: border 0.3s ease;
   margin: 5px;
+  padding: 10px;
 }
 
 .drop-zone input {

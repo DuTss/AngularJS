@@ -1,14 +1,96 @@
 .container {
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.drop-zone {
+    position: relative;
+    height: 80px;
+    /* Ajustez la hauteur selon vos besoins */
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border 0.3s ease;
+    margin: 5px;
+    padding: 10px;
+}
+
+.drop-zone input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Style pour indiquer le survol de la zone de dépôt */
+.drop-zone:hover {
+    border: 2px dashed #3599eb;
+}
+
+/* Style du texte à l'intérieur de la zone de dépôt */
+.drop-zone p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.uploadImages {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.iconImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-camera {
+    font-size: 35px;
+    color: #3599eb;
+}
+
+i {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.fa-camera:hover {
+    color: rgb(139, 139, 212);
 }
 
 h2 {
     text-align: center;
-}
-
-.user-form {
-    margin-top: 30px;
 }
 
 .user-form label {
@@ -72,4 +154,12 @@ h2 {
     font-size: 16px;
     color: #888;
     width: 40%;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 50px;
+    object-fit: cover;
 }

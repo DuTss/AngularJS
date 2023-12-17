@@ -1,5 +1,6 @@
-div .container-global {
-  border-radius: 25px;
+.container-global {
+  background-color: #ff7f00;
+  border-radius: 25px !important;
 }
 
 .container-popup {
@@ -8,42 +9,28 @@ div .container-global {
   align-items: center;
   height: 100%;
   width: 100%;
-  border-radius: 25px;
 }
 
-.my-custom-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.my-custom-content {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #666;
-}
-
+/* BOUTON FERMER LA POPUP */
 .my-custom-actions {
   display: flex;
   justify-content: flex-end;
 }
 
+.my-custom-actions i {
+  box-shadow: rgb(62, 62, 62) 0px 0px 5px;
+  border-radius: 25px;
+  color: #ff7f00;
+  font-size: 36px;
+  margin: 10px;
+}
+
+.my-custom-actions i:hover {
+  cursor: pointer;
+  background-color: #ff7f00;
+  color: #ffffff;
+}
+
 img {
   margin-top: 20px;
-}
-
-.close {
-  background-color: #ff9831;
-  color: #fff;
-  border-radius: 25px;
-  padding: 4px 8px;
-  font-weight: bolder;
-  border: 0px;
-  margin: 10px;
-  box-shadow: rgb(62, 62, 62) 0px 0px 5px;
-}
-
-.close:hover {
-  background-color: #ff7f00;
-  color: #fff;
 }

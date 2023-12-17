@@ -11,7 +11,6 @@ import { SingleAnnonceComponent } from './single-annonce/single-annonce.componen
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
-import { ChatComponent } from './chat/chat.component';
 import { ProfilComponent } from './profil/profil.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -20,7 +19,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { JoinUsComponent } from './join-us/join-us.component';
-import { MesMessagesComponent } from './mes-messages/mes-messages.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
 
@@ -36,13 +34,11 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     LoginComponent,
     SignupComponent,
     AboutComponent,
-    ChatComponent,
     ProfilComponent,
     FooterComponent,
     NavbarComponent,
     HomepageComponent,
     JoinUsComponent,
-    MesMessagesComponent,
     UpdateUserComponent,
   ],
   imports: [

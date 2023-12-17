@@ -4,4 +4,5 @@ export interface User {
     lieu: string;
     mdp: string;
     favoris: string[];
+    AuthTokens: [{AuthToken : string}];
 }

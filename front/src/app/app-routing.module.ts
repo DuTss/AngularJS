@@ -9,8 +9,6 @@ import { LoginComponent }                   from './login/login.component';
 import { SignupComponent }                  from './signup/signup.component';
 import { AboutComponent }                   from './about/about.component';
 import { JoinUsComponent }                  from './join-us/join-us.component';
-import { MesMessagesComponent }             from './mes-messages/mes-messages.component';
-import { ChatComponent }                    from './chat/chat.component';
 import { ProfilComponent }                  from './profil/profil.component';
 import { HomepageComponent }                from './homepage/homepage.component';
 import { UpdateUserComponent }              from './update-user/update-user.component';
@@ -36,8 +34,6 @@ const routes: Routes = [
   // PAGES CHAT ET A PROPOS
   { path: 'about',                 component: AboutComponent                                   },
   { path: 'join_us',               component: JoinUsComponent                                  },
-  { path: 'chat',                  component: ChatComponent         ,canActivate: [AuthGuard]  },
-  { path: 'mes_messages',          component: MesMessagesComponent  ,canActivate: [AuthGuard]  },
   { path: 'profil',                component: ProfilComponent       ,canActivate: [AuthGuard]  },
   { path: 'update_user',           component: UpdateUserComponent   ,canActivate: [AuthGuard]  },
 

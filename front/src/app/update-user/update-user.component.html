@@ -1,11 +1,22 @@
-<h2>Votre profil : {{ user.pseudo }}</h2>
 <div class="container">
     <form class="user-form">
+      <div class="profile-header">
+          <div class="profile-picture">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Profile Picture">
+          </div>
+        <div class="profile-info">
+          <h2>Pseudo : {{user.pseudo}}</h2>
+        </div>
+      </div>
         <div class="form-group">
-          <label for="profile-pic"><i class="fas fa-user-circle"></i>Pseudo</label>
-          <input type="text" class="form-control" id="location" [(ngModel)]="user.pseudo" name="location">
             <label for="profile-pic"><i class="fas fa-user-circle"></i>Photo de profil</label>
-            <input type="file" class="form-control-file" id="profile-pic" name="profile-pic">
+            <div class="drop-zone">
+              <div class="iconImage">
+                <i class="fa-solid fa-camera"></i>
+                <p>Ajouter une photo</p>
+              </div>
+              <input type="file" class="form-control uploadImage" id="profile-pic" name="profile-pic" multiple accept="image/*">
+            </div>
         </div>
         <div class="form-group">
           <h3>Paramètres de paiement</h3>

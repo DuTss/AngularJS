@@ -3,6 +3,7 @@ import { PopupBtcComponent } from '../popup-btc/popup-btc.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { MatDialog } from '@angular/material/dialog';
+import { disableDebugTools } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-footer',
@@ -15,7 +16,8 @@ export class FooterComponent {
 
   constructor (
     private modalService: BsModalService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public MatDialogModule: MatDialogModule
   ) {}
 
   openPopup(): void {
